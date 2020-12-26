@@ -1,10 +1,10 @@
 package com.yuren.leetcodecnlearn;
 
-class SubrectangleQueries {
+class Q1476 {
 
     private int[][] rectangle;
 
-    public SubrectangleQueries(int[][] rectangle) {
+    public Q1476(int[][] rectangle) {
         this.rectangle = rectangle;
     }
     

@@ -1,3 +1,5 @@
+package com.yuren.leetcodecnlearn;
+
 class Q1470 {
     public int[] shuffle(int[] nums, int n) {
         int[] ans = new int[n << 1];

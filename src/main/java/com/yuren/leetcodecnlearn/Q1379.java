@@ -3,16 +3,6 @@ package com.yuren.leetcodecnlearn;
 public class Q1379 {
 
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     public final TreeNode getTargetCopy1(final TreeNode original, final TreeNode cloned, final TreeNode target) {
 
         return dfs(cloned, target);
@@ -33,9 +23,7 @@ public class Q1379 {
 
         if (null != cloned.right) {
             TreeNode rightResult = dfs(cloned.right, target);
-            if (null != rightResult) {
-                return rightResult;
-            }
+            return rightResult;
         }
         return null;
     }
@@ -55,6 +43,16 @@ public class Q1379 {
         }
 
         return getTargetCopy(original.right, cloned.right, target);
+    }
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 
 }

@@ -14,6 +14,7 @@ public class MST0804 {
 
     /**
      * 每新增一个元素，都是增加原元素所有子集加上该元素
+     *
      * @param nums
      * @return
      */
@@ -34,6 +35,7 @@ public class MST0804 {
 
     /**
      * 回溯
+     *
      * @param nums
      * @return
      */

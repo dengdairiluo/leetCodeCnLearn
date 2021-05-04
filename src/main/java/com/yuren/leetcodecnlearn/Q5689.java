@@ -30,7 +30,7 @@ public class Q5689 {
         }
         for (List<String> item : items) {
             if (ruleValue.equals(item.get(col))) {
-                ans ++;
+                ans++;
             }
         }
 

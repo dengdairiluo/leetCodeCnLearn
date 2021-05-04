@@ -1,7 +1,5 @@
 package com.yuren.leetcodecnlearn;
 
-import java.util.Arrays;
-
 /**
  * Created with Intellij IDEA.
  * Description:
@@ -22,7 +20,7 @@ public class Q5645 {
     }
 
     public static void main(String[] args) {
-        int[] gain = new int[] {-4, -3, -2, -1, 4, 3, 2};
+        int[] gain = new int[]{-4, -3, -2, -1, 4, 3, 2};
         System.out.println(largestAltitude(gain));
     }
 }

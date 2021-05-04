@@ -27,5 +27,4 @@ public class Q1614 {
     }
 
 
-
 }

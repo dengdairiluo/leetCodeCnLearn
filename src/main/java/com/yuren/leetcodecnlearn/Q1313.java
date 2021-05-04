@@ -6,7 +6,7 @@ public class Q1313 {
 
     private static int[] decompressRLElist(int[] nums) {
         int length = 0;
-        for (int i = 0; i < nums.length; i+=2) {
+        for (int i = 0; i < nums.length; i += 2) {
             length += nums[i];
         }
 

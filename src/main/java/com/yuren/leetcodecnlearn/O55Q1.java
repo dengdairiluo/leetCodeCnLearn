@@ -27,7 +27,9 @@ public class O55Q1 {
         if (root == null) {
             return 0;
         }
-        List<TreeNode> queue = new LinkedList<TreeNode>() {{ add(root);}}, tmp;
+        List<TreeNode> queue = new LinkedList<TreeNode>() {{
+            add(root);
+        }}, tmp;
         int res = 0;
         while (!queue.isEmpty()) {
             tmp = new LinkedList<>();
@@ -56,7 +58,6 @@ public class O55Q1 {
             val = x;
         }
     }
-
 
 
 }

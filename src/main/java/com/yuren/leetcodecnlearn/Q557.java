@@ -43,6 +43,10 @@ public class Q557 {
         return builder.toString();
     }
 
+    public static void main(String[] args) {
+        System.out.println(reverseWords1(""));
+    }
+
     public String reverseWords3(String s) {
         char[] array = s.toCharArray();
         int start = 0;
@@ -67,9 +71,5 @@ public class Q557 {
             l += 1;
             r -= 1;
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println(reverseWords1(""));
     }
 }

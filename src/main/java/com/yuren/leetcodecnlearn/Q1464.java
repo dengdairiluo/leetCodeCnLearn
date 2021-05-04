@@ -10,8 +10,8 @@ package com.yuren.leetcodecnlearn;
 public class Q1464 {
 
     public int maxProduct(int[] nums) {
-        int fst =0, snd = 0;
-        for (int num :nums) {
+        int fst = 0, snd = 0;
+        for (int num : nums) {
             if (num > fst) {
                 snd = fst;
                 fst = num;
@@ -19,7 +19,7 @@ public class Q1464 {
                 snd = num;
             }
         }
-        return (fst -1) * (snd - 1);
+        return (fst - 1) * (snd - 1);
     }
 
 }

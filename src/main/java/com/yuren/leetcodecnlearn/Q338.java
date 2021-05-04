@@ -40,6 +40,11 @@ public class Q338 {
         return bits;
     }
 
+    public static void main(String[] args) {
+//        System.out.println(Arrays.toString(countBits1(10)));
+        System.out.println(Arrays.toString(countBits2(10)));
+    }
+
     public int[] countBits3(int num) {
         int[] bits = new int[num + 1];
         for (int i = 1; i <= num; i++) {
@@ -47,10 +52,5 @@ public class Q338 {
         }
         return bits;
 
-    }
-
-    public static void main(String[] args) {
-//        System.out.println(Arrays.toString(countBits1(10)));
-        System.out.println(Arrays.toString(countBits2(10)));
     }
 }

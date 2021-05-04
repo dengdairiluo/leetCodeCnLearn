@@ -3,7 +3,7 @@ package com.yuren.leetcodecnlearn;
 public class Q1827 {
 
     private int minOperations1(int[] nums) {
-        if(nums.length == 1){
+        if (nums.length == 1) {
             return 0;
         }
         int ans = 0;

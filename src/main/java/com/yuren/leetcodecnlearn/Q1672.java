@@ -1,16 +1,16 @@
 package com.yuren.leetcodecnlearn;
 
 public class Q1672 {
-      public int maximumWealth(int[][] accounts) {
+    public int maximumWealth(int[][] accounts) {
 
         int maxSum = -1;
         int sum = -1;
-        for(int i = 0; i< accounts.length; i++) {
+        for (int i = 0; i < accounts.length; i++) {
             sum = 0;
-            for(int j = 0; j < accounts[0].length; j++) {
+            for (int j = 0; j < accounts[0].length; j++) {
                 sum += accounts[i][j];
             }
-            if(sum > maxSum) {
+            if (sum > maxSum) {
                 maxSum = sum;
             }
         }

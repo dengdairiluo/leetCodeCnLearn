@@ -12,7 +12,7 @@ public class Q5718 {
     public int[] countPoints(int[][] points, int[][] queries) {
         int n = queries.length;
         int[] res = new int[n];
-        for(int i = 0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             for (int[] point : points) {
                 int X = queries[i][0];
                 int Y = queries[i][1];

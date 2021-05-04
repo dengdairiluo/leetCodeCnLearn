@@ -23,51 +23,51 @@ public class Q339 {
     }
 
 
-  // This is the interface that allows for creating nested lists.
-  // You should not implement it, or speculate about its implementation
-  public static class NestedInteger {
-      // Constructor initializes an empty nested list.
-      private int value;
-      private boolean integerFlag;
-      private List<NestedInteger> list;
+    // This is the interface that allows for creating nested lists.
+    // You should not implement it, or speculate about its implementation
+    public static class NestedInteger {
+        // Constructor initializes an empty nested list.
+        private int value;
+        private final boolean integerFlag;
+        private List<NestedInteger> list;
 
-      public NestedInteger() {
-          this.integerFlag = false;
-          list = new ArrayList<>();
-      }
+        public NestedInteger() {
+            this.integerFlag = false;
+            list = new ArrayList<>();
+        }
 
-      // Constructor initializes a single integer.
-      public NestedInteger(int value) {
-          this.integerFlag = true;
-          this.value = value;
-      }
+        // Constructor initializes a single integer.
+        public NestedInteger(int value) {
+            this.integerFlag = true;
+            this.value = value;
+        }
 
-      // @return true if this NestedInteger holds a single integer, rather than a nested list.
-      public boolean isIntegerFlag() {
-          return integerFlag;
-      }
+        // @return true if this NestedInteger holds a single integer, rather than a nested list.
+        public boolean isIntegerFlag() {
+            return integerFlag;
+        }
 
-      // @return the single integer that this NestedInteger holds, if it holds a single integer
-      // Return null if this NestedInteger holds a nested list
-      public Integer getInteger() {
-          return value;
-      }
+        // Set this NestedInteger to hold a single integer.
+        public void setIntegerFlag(int value) {
+            this.value = value;
+        }
 
-      // Set this NestedInteger to hold a single integer.
-      public void setIntegerFlag(int value) {
-          this.value = value;
-      }
+        // @return the single integer that this NestedInteger holds, if it holds a single integer
+        // Return null if this NestedInteger holds a nested list
+        public Integer getInteger() {
+            return value;
+        }
 
-      // Set this NestedInteger to hold a nested list and adds a nested integer to it.
-      public void add(NestedInteger ni) {
-          list.add(ni);
-      }
+        // Set this NestedInteger to hold a nested list and adds a nested integer to it.
+        public void add(NestedInteger ni) {
+            list.add(ni);
+        }
 
-      // @return the nested list that this NestedInteger holds, if it holds a nested list
-      // Return empty list if this NestedInteger holds a single integer
-      public List<NestedInteger> getList() {
-          return list;
-      }
-  }
+        // @return the nested list that this NestedInteger holds, if it holds a nested list
+        // Return empty list if this NestedInteger holds a single integer
+        public List<NestedInteger> getList() {
+            return list;
+        }
+    }
 
 }

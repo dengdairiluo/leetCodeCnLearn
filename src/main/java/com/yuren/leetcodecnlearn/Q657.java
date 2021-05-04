@@ -11,7 +11,7 @@ public class Q657 {
                 x++;
             } else if (c == 'U') {
                 y++;
-            } else if ( c== 'D') {
+            } else if (c == 'D') {
                 y--;
             }
         }

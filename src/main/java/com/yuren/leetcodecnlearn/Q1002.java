@@ -9,7 +9,7 @@ public class Q1002 {
     public List<String> commonChars(String[] A) {
         int[] minFreq = new int[26];
         Arrays.fill(minFreq, Integer.MAX_VALUE);
-        for (String word: A) {
+        for (String word : A) {
             int[] freq = new int[26];
             int length = word.length();
             for (int i = 0; i < length; ++i) {

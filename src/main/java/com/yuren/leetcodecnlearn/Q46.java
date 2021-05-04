@@ -41,7 +41,7 @@ public class Q46 {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[] {1, 2, 3};
+        int[] nums = new int[]{1, 2, 3};
         System.out.println(permute(nums));
     }
 

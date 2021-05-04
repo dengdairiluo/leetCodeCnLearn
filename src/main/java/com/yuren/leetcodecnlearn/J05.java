@@ -2,7 +2,7 @@ package com.yuren.leetcodecnlearn;
 
 public class J05 {
     private static String replaceSpace1(String s) {
-        return s.replaceAll(" ","%20");
+        return s.replaceAll(" ", "%20");
     }
 
     private static String replaceSpace2(String s) {

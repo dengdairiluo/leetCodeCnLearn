@@ -12,7 +12,7 @@ public class Q1134 {
         int tmp = n, sum = 0;
         int k = String.valueOf(n).length();
         for (int i = 0; i < k; i++) {
-            sum += Math.pow(tmp%10, k);
+            sum += Math.pow(tmp % 10, k);
             tmp /= 10;
         }
         return sum == n;

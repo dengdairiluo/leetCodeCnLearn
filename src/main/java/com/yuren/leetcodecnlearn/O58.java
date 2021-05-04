@@ -15,7 +15,7 @@ public class O58 {
 
     public String reverseLeftWords3(String s, int n) {
         StringBuilder res = new StringBuilder();
-        for(int i = n; i < n + s.length(); i++) {
+        for (int i = n; i < n + s.length(); i++) {
             res.append(s.charAt(i % s.length()));
         }
         return res.toString();

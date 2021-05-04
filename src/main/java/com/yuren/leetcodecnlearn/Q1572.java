@@ -15,8 +15,8 @@ public class Q1572 {
         for (int i = 0; i < l; i++) {
             sum += mat[i][i] + mat[l - 1 - i][i];
         }
-        if (l % 2== 0) {
-            sum -= mat[(l- 1) /2][(l-1)/2];
+        if (l % 2 == 0) {
+            sum -= mat[(l - 1) / 2][(l - 1) / 2];
         }
         return sum;
     }

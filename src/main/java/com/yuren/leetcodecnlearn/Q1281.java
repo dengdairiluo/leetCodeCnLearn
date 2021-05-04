@@ -9,7 +9,7 @@ public class Q1281 {
         while (n > 0) {
             int a = n % 10;
             sum += a;
-            multi*= a;
+            multi *= a;
             n /= 10;
         }
         return multi - sum;

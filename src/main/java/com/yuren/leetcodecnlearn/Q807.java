@@ -1,7 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
 public class Q807 {
-    
+
     public static int maxIncreaseKeepingSkyline1(int[][] grid) {
         int[] rowMaxes = new int[grid.length];
         int[] colMaxes = new int[grid[0].length];

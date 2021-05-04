@@ -10,14 +10,14 @@ package com.yuren.leetcodecnlearn;
 public class Q1725 {
     public int countGoodRectangles(int[][] rectangles) {
         int a;
-        int max=0;
-        int count=1;
-        for(int i=0; i<rectangles.length; i++){
+        int max = 0;
+        int count = 1;
+        for (int i = 0; i < rectangles.length; i++) {
             a = Math.min(rectangles[i][0], rectangles[i][1]);
-            if(a>max){
+            if (a > max) {
                 max = a;
-                count=1;
-            }else if(a==max){
+                count = 1;
+            } else if (a == max) {
                 count++;
             }
         }

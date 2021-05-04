@@ -14,10 +14,10 @@ public class Q1833 {
     private static int maxIceCream(int[] costs, int coins) {
         Arrays.sort(costs);
         int ans = 0;
-        for(int cost : costs) {
+        for (int cost : costs) {
             if (cost <= coins) {
                 ans++;
-                coins-=cost;
+                coins -= cost;
             } else {
                 break;
             }
@@ -27,7 +27,7 @@ public class Q1833 {
     }
 
     public static void main(String[] args) {
-        int[] costs = new int[] {1,3,2,4,1};
+        int[] costs = new int[]{1, 3, 2, 4, 1};
         System.out.println(maxIceCream(costs, 7));
     }
 

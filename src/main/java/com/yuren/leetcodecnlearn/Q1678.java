@@ -5,7 +5,7 @@ public class Q1678 {
         int length = command.length();
         char[] charArray = command.toCharArray();
         int i = 0;
-         StringBuilder builder = new StringBuilder();
+        StringBuilder builder = new StringBuilder();
         while (i < length) {
             char item = charArray[i];
             if (item == 'G') {

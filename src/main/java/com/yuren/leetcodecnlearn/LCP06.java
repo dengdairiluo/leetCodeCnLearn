@@ -5,7 +5,7 @@ public class LCP06 {
         int ans = 0;
         for (int c : coins) {
             if (c < 3) {
-              ans++;
+                ans++;
             } else {
                 ans += (c + 1) / 2;
             }

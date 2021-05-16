@@ -26,9 +26,9 @@ public class Q339 {
     // This is the interface that allows for creating nested lists.
     // You should not implement it, or speculate about its implementation
     public static class NestedInteger {
+        private final boolean integerFlag;
         // Constructor initializes an empty nested list.
         private int value;
-        private final boolean integerFlag;
         private List<NestedInteger> list;
 
         public NestedInteger() {

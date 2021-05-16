@@ -26,6 +26,7 @@ public class Q1047 {
         }
         return stack.toString();
     }
+
     public String removeDuplicates2(String S) {
         int index = -1;
         char[] chars = S.toCharArray();

@@ -18,9 +18,10 @@ public class Q1460 {
         }
         return true;
     }
+
     public boolean canBeEqual2(int[] target, int[] arr) {
         Arrays.sort(target);
         Arrays.sort(arr);
-        return Arrays.equals(target,arr);
+        return Arrays.equals(target, arr);
     }
 }

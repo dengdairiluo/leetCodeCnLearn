@@ -11,20 +11,19 @@ import java.util.List;
  * @date 2021-05-23 11:42
  */
 public class MST0807 {
-    private List<String> list = new ArrayList<>();
+    private final List<String> list = new ArrayList<>();
 
     public String[] permutation(String S) {
         char[] chas = S.toCharArray();
-        dfs(chas,0);
+        dfs(chas, 0);
         String[] res = new String[list.size()];
         return list.toArray(res);
     }
 
 
     /**
-     *
      * @param chas
-     * @param idx 当前遍历的chas的下标
+     * @param idx  当前遍历的chas的下标
      */
     private void dfs(char[] chas, int idx) {
         if (idx == chas.length - 1) {//返回

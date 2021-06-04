@@ -5,6 +5,7 @@ import java.util.Queue;
 
 public class Q933 {
     Queue<Integer> q;
+
     public Q933() {
         q = new LinkedList<>();
     }

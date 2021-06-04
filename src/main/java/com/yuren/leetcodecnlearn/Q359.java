@@ -13,7 +13,9 @@ public class Q359 {
 
     private final HashMap<String, Integer> msgDict;
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public Q359() {
         msgDict = new HashMap<>();
     }

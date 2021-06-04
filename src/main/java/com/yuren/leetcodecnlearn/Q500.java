@@ -13,7 +13,7 @@ public class Q500 {
         List<String> ans = new ArrayList<>();
 
         // 字典行
-        String lines[] = new String[]{
+        String[] lines = new String[]{
                 "qwertyuiop",
                 "asdfghjkl",
                 "zxcvbnm"

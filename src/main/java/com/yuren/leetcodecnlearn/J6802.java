@@ -6,6 +6,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class J6802 {
+    Map<Integer, TreeNode> parent = new HashMap<>();
+    Set<Integer> visited = new HashSet<>();
     private TreeNode ans;
 
     public J6802() {
@@ -26,19 +28,6 @@ public class J6802 {
         this.dfs(root, p, q);
         return this.ans;
     }
-
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
-    Map<Integer, TreeNode> parent = new HashMap<>();
-    Set<Integer> visited = new HashSet<>();
 
     public void dfs(TreeNode root) {
         if (root.left != null) {
@@ -64,6 +53,16 @@ public class J6802 {
             q = parent.get(q.val);
         }
         return null;
+    }
+
+    private static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 
 }

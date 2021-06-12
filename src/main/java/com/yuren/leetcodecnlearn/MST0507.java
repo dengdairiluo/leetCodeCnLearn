@@ -2,18 +2,18 @@ package com.yuren.leetcodecnlearn;
 
 public class MST0507 {
     public int exchangeBits1(int num) {
-        int left = num<<1;
-        int right = num>>1;
-        int one =1,two =2,leftt=0,rightt=0;
-        for(int i=0;i<16;i++){
-            leftt|=two;
-            rightt|=one;
-            one<<=2;
-            two<<=2;
+        int left = num << 1;
+        int right = num >> 1;
+        int one = 1, two = 2, leftt = 0, rightt = 0;
+        for (int i = 0; i < 16; i++) {
+            leftt |= two;
+            rightt |= one;
+            one <<= 2;
+            two <<= 2;
         }
-        left &=leftt;
-        right &=rightt;
-        return left|right;
+        left &= leftt;
+        right &= rightt;
+        return left | right;
 
     }
 

@@ -15,7 +15,7 @@ public class Q346 {
         ++count;
         // calculate the new sum by shifting the window
         queue.add(val);
-        int tail = count > size ? (int) queue.poll() : 0;
+        int tail = count > size ? queue.poll() : 0;
 
         windowSum = windowSum - tail + val;
 

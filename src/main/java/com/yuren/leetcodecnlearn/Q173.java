@@ -24,10 +24,7 @@ public class Q173 {
     }
 
     public boolean hasNext() {
-        if (i < list.size()) {
-            return true;
-        }
-        return false;
+        return i < list.size();
     }
 
     public void dfs(TreeNode root) {

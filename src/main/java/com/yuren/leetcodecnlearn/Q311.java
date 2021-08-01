@@ -21,7 +21,7 @@ public class Q311 {
         return res;
     }
 
-    private int calculate(int[][] A ,int[][] B, int row, int col) {
+    private int calculate(int[][] A, int[][] B, int row, int col) {
         int sum = 0;
         for (int j = 0; j < A[row].length; j++) {
             sum = sum + A[row][j] * B[j][col];

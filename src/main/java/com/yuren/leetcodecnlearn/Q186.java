@@ -27,7 +27,7 @@ public class Q186 {
         for (int i = 0; i < len; i++) {
             if (s[i] == ' ') {
                 // 翻转前面的单词
-                reverse(s, start, i-1);
+                reverse(s, start, i - 1);
                 start = i + 1;
             }
         }

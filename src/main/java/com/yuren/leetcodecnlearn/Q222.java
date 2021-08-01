@@ -15,6 +15,28 @@ public class Q222 {
         return countNodes1(root.left) + countNodes1(root.right) + 1;
     }
 
+    public int countNodes2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left = countLevel(root.left);
+        int right = countLevel(root.right);
+        if (left == right) {
+            return countNodes2(root.right) + (1 << left);
+        } else {
+            return countNodes2(root.left) + (1 << right);
+        }
+    }
+
+    private int countLevel(TreeNode root) {
+        int level = 0;
+        while (root != null) {
+            level++;
+            root = root.left;
+        }
+        return level;
+    }
+
     private static class TreeNode {
         int val;
         TreeNode left;
@@ -32,26 +54,5 @@ public class Q222 {
             this.left = left;
             this.right = right;
         }
-    }
-
-    public int countNodes2(TreeNode root) {
-        if(root == null){
-            return 0;
-        }
-        int left = countLevel(root.left);
-        int right = countLevel(root.right);
-        if(left == right){
-            return countNodes2(root.right) + (1<<left);
-        }else{
-            return countNodes2(root.left) + (1<<right);
-        }
-    }
-    private int countLevel(TreeNode root) {
-        int level = 0;
-        while (root != null) {
-            level++;
-            root = root.left;
-        }
-        return level;
     }
 }

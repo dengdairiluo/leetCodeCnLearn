@@ -12,9 +12,9 @@ import java.util.Arrays;
 public class Q1877 {
     public int minPairSum1(int[] nums) {
         Arrays.sort(nums);
-        int max=0;
-        for(int i=0;i<nums.length/2;i++){
-            max= Math.max(max,nums[i]+nums[nums.length-1-i]);
+        int max = 0;
+        for (int i = 0; i < nums.length / 2; i++) {
+            max = Math.max(max, nums[i] + nums[nums.length - 1 - i]);
         }
         return max;
     }

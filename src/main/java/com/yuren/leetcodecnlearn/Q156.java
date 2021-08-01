@@ -18,7 +18,6 @@ public class Q156 {
             root.right = null;
             return res;
         }
-        ;
         //一般情况，把当前节点的右指针指向父节点，左指针指向父节点的右儿子
         root.right = parent;
         root.left = parent.right;

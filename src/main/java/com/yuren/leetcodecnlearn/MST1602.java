@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MST1602 {
-    private Map<String, Integer> map = new HashMap<>();
+    private final Map<String, Integer> map = new HashMap<>();
 
     public MST1602(String[] book) {
         for (String word : book) {

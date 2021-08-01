@@ -56,15 +56,15 @@ public class Q1409 {
     }
 
     public int[] processQueries2(int[] queries, int m) {
-        LinkedList<Integer> linkedList=new LinkedList<>();
-        int[] a=new int[queries.length];
-        for(int i=1;i<=m;i++){
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        int[] a = new int[queries.length];
+        for (int i = 1; i <= m; i++) {
             linkedList.add(i);
         }
-        int mz=0;
-        for(int i=0;i<queries.length;i++){
-            if(linkedList.contains(queries[i])){
-                a[i]=linkedList.indexOf(queries[i]);
+        int mz = 0;
+        for (int i = 0; i < queries.length; i++) {
+            if (linkedList.contains(queries[i])) {
+                a[i] = linkedList.indexOf(queries[i]);
                 linkedList.remove((Integer) queries[i]);
                 linkedList.addFirst(queries[i]);
             }

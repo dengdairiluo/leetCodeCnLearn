@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q281 {
-    private ArrayList<Integer>[] listArr;
+    private final ArrayList<Integer>[] listArr;
     private int i;
     private int j;
-    private int size;
+    private final int size;
 
     public Q281(List<Integer> v1, List<Integer> v2) {
         listArr = new ArrayList[2];

@@ -9,7 +9,7 @@ package com.yuren.leetcodecnlearn;
  */
 public class Q52 {
     public int totalNQueens(int n) {
-        int result[] = {1, 0, 0, 2, 10, 4, 40, 92, 352};
+        int[] result = {1, 0, 0, 2, 10, 4, 40, 92, 352};
         return result[n - 1];
     }
 }

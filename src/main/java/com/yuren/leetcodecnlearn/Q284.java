@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class Q284 implements Iterator<Integer> {
     Integer next;
-    private Iterator<Integer> iter;
+    private final Iterator<Integer> iter;
 
     public Q284(Iterator<Integer> iterator) {
         // initialize any member here.

@@ -29,8 +29,13 @@ public class Q959 {
 }
 
 class UF {
+    private final int[][] E = {{-1, -1, '\\'}, {-1, 0, '/'}, {0, -1, '/'}, {0, 0, '\\'}};
     private int count;
-    private int[] parent, size;
+    private final int[] parent;
+    private final int[] size;
+    private int n, m;
+    private String[] g;
+    private int[] v;    // vis
 
     public UF(int n) {
         this.count = n;
@@ -74,10 +79,6 @@ class UF {
         return count;
     }
 
-    private final int[][] E = {{-1, -1, '\\'}, {-1, 0, '/'}, {0, -1, '/'}, {0, 0, '\\'}};
-    private int n, m;
-    private String[] g;
-    private int[] v;    // vis
     public int regionsBySlashes2(String[] grid) {
         g = grid;
         n = g.length;
@@ -92,9 +93,10 @@ class UF {
             if (!gv(0, i)) res += dfs(0, i, -233, -233);
             if (!gv(n, i)) res += dfs(n, i, -233, -233);
         }
-        for (int i = n - 1; i > 0; --i) for (int j = m - 1; j > 0; --j) {
-            if (!gv(i, j)) res += dfs(i, j, -233, -233);
-        }
+        for (int i = n - 1; i > 0; --i)
+            for (int j = m - 1; j > 0; --j) {
+                if (!gv(i, j)) res += dfs(i, j, -233, -233);
+            }
         return res >> 1;
     }
 
@@ -114,6 +116,11 @@ class UF {
         return res;
     }
 
-    private boolean gv(int x, int y) { return (v[x] & (1 << y)) != 0; } // get vis
-    private void sv(int x, int y) { v[x] |= (1 << y); }                 // set vis
+    private boolean gv(int x, int y) {
+        return (v[x] & (1 << y)) != 0;
+    } // get vis
+
+    private void sv(int x, int y) {
+        v[x] |= (1 << y);
+    }                 // set vis
 }

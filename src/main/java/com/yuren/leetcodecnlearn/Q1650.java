@@ -17,7 +17,5 @@ public class Q1650 {
         public Node parent;
     }
 
-    ;
-
 
 }

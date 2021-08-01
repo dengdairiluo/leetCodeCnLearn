@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Q341 implements Iterator<Integer> {
-    private List<Integer> vals;
-    private Iterator<Integer> cur;
+    private final List<Integer> vals;
+    private final Iterator<Integer> cur;
 
     public Q341(List<Q341> nestedList) {
         vals = new ArrayList<>();
@@ -26,6 +26,7 @@ public class Q341 implements Iterator<Integer> {
 
     /**
      * 默认方法1
+     *
      * @return
      */
     public boolean isInteger() {
@@ -34,6 +35,7 @@ public class Q341 implements Iterator<Integer> {
 
     /**
      * 默认方法2
+     *
      * @return
      */
     public Integer getInteger() {
@@ -42,6 +44,7 @@ public class Q341 implements Iterator<Integer> {
 
     /**
      * 默认方法3
+     *
      * @return
      */
     public List<Q341> getList() {

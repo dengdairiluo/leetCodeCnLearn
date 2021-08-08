@@ -7,7 +7,7 @@ package com.yuren.leetcodecnlearn;
  * @author lujiang
  * @date 2021-08-05 23:27
  */
-public class J02_024 {
+public class J02024 {
     public ListNode reverseList(ListNode head) {
         if (head == null) {
             return null;

@@ -10,7 +10,7 @@ import java.util.Comparator;
  * @author lujiang
  * @date 2021-08-07 20:43
  */
-public class J02_005 {
+public class J02005 {
     public int maxProduct(String[] words) {
         Arrays.sort(words, Comparator.comparing(String::length));
         final int max = 0x3FFFFFF;

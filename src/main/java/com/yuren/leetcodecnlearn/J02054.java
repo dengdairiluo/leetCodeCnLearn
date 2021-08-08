@@ -7,7 +7,7 @@ package com.yuren.leetcodecnlearn;
  * @author lujiang
  * @date 2021-08-07 20:36
  */
-public class J02_054 {
+public class J02054 {
     int sum = 0;
 
     public TreeNode convertBST(TreeNode root) {

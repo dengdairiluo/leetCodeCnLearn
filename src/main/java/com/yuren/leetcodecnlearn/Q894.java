@@ -31,7 +31,7 @@ public class Q894 {
         return memo.get(N);
     }
 
-    public static class TreeNode {
+    private static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

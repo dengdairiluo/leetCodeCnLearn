@@ -22,7 +22,7 @@ public class Q1602 {
         return null;
     }
 
-    public static class TreeNode {
+    private static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

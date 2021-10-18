@@ -70,4 +70,3 @@ public class Q218 {
         return ans;
     }
 }
-''

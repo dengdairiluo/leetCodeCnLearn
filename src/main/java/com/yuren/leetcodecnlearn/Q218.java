@@ -25,7 +25,7 @@ public class Q218 {
          * 2. 如果同样都是左端点，则按照高度「从大到小」进行处理（将高度增加到优先队列中）
          * 3. 如果同样都是右端点，则按照高度「从小到大」进行处理（将高度从优先队列中删掉）
          */
-        Collections.sort(ps, (a, b)->{
+        Collections.sort(ps, (a, b) -> {
             if (a[0] != b[0]) return a[0] - b[0];
             if (a[2] != b[2]) return a[2] - b[2];
             if (a[2] == -1) {
@@ -36,7 +36,7 @@ public class Q218 {
         });
         // 记录进行了删除操作的高度，以及删除次数
         Map<Integer, Integer> map = new HashMap<>();
-        PriorityQueue<Integer> q = new PriorityQueue<>((a, b)->b-a);
+        PriorityQueue<Integer> q = new PriorityQueue<>((a, b) -> b - a);
         int prev = 0;
         q.add(prev);
         for (int[] p : ps) {

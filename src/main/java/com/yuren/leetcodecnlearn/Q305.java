@@ -46,18 +46,39 @@ public class Q305 {
     }
 
     static class Union {// 并查集模板
-        int[]fa;int[]sz;int count;// 当前连通分量数目
-        public boolean united(int x,int y){x=find(x);y=find(y);return x==y;}
-        public int find(int x){return fa[x]==x?x:(fa[x]=find(fa[x]));}
+        int[] fa;
+        int[] sz;
+        int count;// 当前连通分量数目
+
         public Union(int n) {//构造函数+初始化
-            this.sz=new int[n];for(int i=0;i<n;i++)sz[i]=1;
-            this.fa=new int[n];for(int i=0;i<n;i++)fa[i]=i;
-            this.count =0;
+            this.sz = new int[n];
+            for (int i = 0; i < n; i++) sz[i] = 1;
+            this.fa = new int[n];
+            for (int i = 0; i < n; i++) fa[i] = i;
+            this.count = 0;
         }
-        public void union(int x,int y) {
-            x=find(x);y=find(y);
-            if(sz[x]<sz[y]){x^=y;y^=x;x^=y;}//按秩合并保证 sz[x]>=sz[y]
-            sz[x]+=sz[y];fa[y]=x;--count;//把秩小的unite到大的上
+
+        public boolean united(int x, int y) {
+            x = find(x);
+            y = find(y);
+            return x == y;
+        }
+
+        public int find(int x) {
+            return fa[x] == x ? x : (fa[x] = find(fa[x]));
+        }
+
+        public void union(int x, int y) {
+            x = find(x);
+            y = find(y);
+            if (sz[x] < sz[y]) {
+                x ^= y;
+                y ^= x;
+                x ^= y;
+            }//按秩合并保证 sz[x]>=sz[y]
+            sz[x] += sz[y];
+            fa[y] = x;
+            --count;//把秩小的unite到大的上
         }
     }
 

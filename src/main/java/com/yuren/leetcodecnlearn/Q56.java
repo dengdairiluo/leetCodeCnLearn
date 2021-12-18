@@ -16,7 +16,7 @@ public class Q56 {
         // 遍历区间
         int[][] res = new int[intervals.length][2];
         int idx = -1;
-        for (int[] interval: intervals) {
+        for (int[] interval : intervals) {
             // 如果结果数组是空的，或者当前区间的起始位置 > 结果数组中最后区间的终止位置，
             // 则不合并，直接将当前区间加入结果数组。
             if (idx == -1 || interval[0] > res[idx][1]) {

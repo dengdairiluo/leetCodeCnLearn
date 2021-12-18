@@ -12,7 +12,8 @@ import java.util.List;
  * @date 2021-09-22 23:09
  */
 public class Q133 {
-    private HashMap<Node, Node> visited = new HashMap <> ();
+    private final HashMap<Node, Node> visited = new HashMap<>();
+
     public Node cloneGraph(Node node) {
         if (node == null) {
             return node;
@@ -29,7 +30,7 @@ public class Q133 {
         visited.put(node, cloneNode);
 
         // 遍历该节点的邻居并更新克隆节点的邻居列表
-        for (Node neighbor: node.neighbors) {
+        for (Node neighbor : node.neighbors) {
             cloneNode.neighbors.add(cloneGraph(neighbor));
         }
         return cloneNode;
@@ -38,14 +39,17 @@ public class Q133 {
     private static class Node {
         public int val;
         public List<Node> neighbors;
+
         public Node() {
             val = 0;
             neighbors = new ArrayList<>();
         }
+
         public Node(int _val) {
             val = _val;
             neighbors = new ArrayList<>();
         }
+
         public Node(int _val, ArrayList<Node> _neighbors) {
             val = _val;
             neighbors = _neighbors;

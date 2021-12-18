@@ -13,6 +13,7 @@ import java.util.Set;
  */
 public class Q354 {
     int[] tree;
+
     int lowbit(int x) {
         return x & -x;
     }
@@ -22,7 +23,7 @@ public class Q354 {
         if (n == 0) return n;
 
         // 由于我们使用了 g 记录高度，因此这里只需将 w 从小到达排序即可
-        Arrays.sort(es, (a, b)->a[0] - b[0]);
+        Arrays.sort(es, (a, b) -> a[0] - b[0]);
 
         // 先将所有的 h 进行离散化
         Set<Integer> set = new HashSet<>();

@@ -6,7 +6,7 @@ public class Q299 {
         int a = 0, b = 0;
         int[] cnt1 = new int[10], cnt2 = new int[10];
         for (int i = 0; i < n; i++) {
-            int c1 = secret.charAt(i) - '0', c2= guess.charAt(i) - '0';
+            int c1 = secret.charAt(i) - '0', c2 = guess.charAt(i) - '0';
             if (c1 == c2) {
                 a++;
             } else {

@@ -3,8 +3,8 @@ package com.yuren.leetcodecnlearn;
 import java.util.Iterator;
 
 public class Q284 implements Iterator<Integer> {
-    Integer next;
     private final Iterator<Integer> iter;
+    Integer next;
 
     public Q284(Iterator<Integer> iterator) {
         // initialize any member here.

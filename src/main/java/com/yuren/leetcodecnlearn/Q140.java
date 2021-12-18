@@ -56,7 +56,7 @@ public class Q140 {
      */
     private void dfs(String s, int len, Set<String> wordSet, boolean[] dp, Deque<String> path, List<String> res) {
         if (len == 0) {
-            res.add(String.join(" ",path));
+            res.add(String.join(" ", path));
             return;
         }
 

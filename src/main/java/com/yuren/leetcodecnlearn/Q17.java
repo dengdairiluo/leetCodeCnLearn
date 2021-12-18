@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Q17 {
-    private String letterMap[] = {
+    private final String[] letterMap = {
             " ",    //0
             "",     //1
             "abc",  //2

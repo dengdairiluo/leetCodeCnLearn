@@ -26,7 +26,7 @@ public class Q149 {
                 int abDeltaY = b[1] - a[1];
 
                 for (int k = j + 1; k < n; k++) {
-                    int c[] = points[k];
+                    int[] c = points[k];
                     int acDeltaX = c[0] - a[0];
                     int acDeltaY = c[1] - a[1];
                     // 判断abDeltaY/abDeltaX是否等于acDeltaY/acDeltaX

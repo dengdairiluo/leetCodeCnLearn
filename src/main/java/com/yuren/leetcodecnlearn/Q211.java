@@ -9,16 +9,7 @@ package com.yuren.leetcodecnlearn;
  */
 public class Q211 {
 
-    // 前缀树节点
-    private class TrieNode {
-        TrieNode[] path;
-        boolean end; // 是否存在以当前字符结尾的word
-        public TrieNode() {
-            path = new TrieNode[26]; // word中只含26个小写字母，准备26条路
-        }
-    }
-
-    private TrieNode root;
+    private final TrieNode root;
 
     public Q211() {
         root = new TrieNode();
@@ -56,7 +47,7 @@ public class Q211 {
         }
 
         char curChar = chars[i];
-        if (i == chars.length-1) { // 当前已是最后一个字符
+        if (i == chars.length - 1) { // 当前已是最后一个字符
             if (curChar != '.') { // 最后一个字符不是点，需要在前缀树上严格匹配（有对应的路，并且这条路上有end）
                 return cur.path[curChar - 'a'] != null && cur.path[curChar - 'a'].end;
             } else { // 最后一个字符是点，只要存在一条有end的路即可匹配成功
@@ -70,14 +61,24 @@ public class Q211 {
         }
         // 当前不是最后一个字符，还有不止一个字符需要匹配：
         if (curChar != '.') { // 不是点，需要在前缀树上严格匹配（有对应的路，并且后续也能匹配上）
-            return cur.path[curChar - 'a'] != null && search(chars, i+1, cur.path[curChar - 'a']);
+            return cur.path[curChar - 'a'] != null && search(chars, i + 1, cur.path[curChar - 'a']);
         }
         // curChar == '.'，只要存在一条路，使得后续可以匹配上即可
         for (TrieNode path : cur.path) {
-            if (search(chars, i+1, path)) {
+            if (search(chars, i + 1, path)) {
                 return true;
             }
         }
         return false;
+    }
+
+    // 前缀树节点
+    private class TrieNode {
+        TrieNode[] path;
+        boolean end; // 是否存在以当前字符结尾的word
+
+        public TrieNode() {
+            path = new TrieNode[26]; // word中只含26个小写字母，准备26条路
+        }
     }
 }

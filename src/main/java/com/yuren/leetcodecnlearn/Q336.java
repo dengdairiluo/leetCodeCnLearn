@@ -21,7 +21,7 @@ public class Q336 {
         for (int i = 0; i < n; i++) {
             String rev = new StringBuilder(words[i]).reverse().toString();
             Node cur = root;
-            if (isPalindrome(rev.substring(0))) cur.suffixs.add(i);
+            if (isPalindrome(rev)) cur.suffixs.add(i);
             for (int j = 0; j < rev.length(); j++) {
                 char ch = rev.charAt(j);
                 if (cur.children[ch - 'a'] == null) cur.children[ch - 'a'] = new Node();

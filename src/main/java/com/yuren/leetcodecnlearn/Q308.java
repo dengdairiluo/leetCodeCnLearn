@@ -8,7 +8,7 @@ package com.yuren.leetcodecnlearn;
  * @date 2021-11-20 20:22
  */
 public class Q308 {
-    private int[][] matrix;
+    private final int[][] matrix;
     private int[][] rowSumArr;  // 保存每个元素(i, j)在第i行的前j+1项的和。
     private int rowCount;
     private int colCount;

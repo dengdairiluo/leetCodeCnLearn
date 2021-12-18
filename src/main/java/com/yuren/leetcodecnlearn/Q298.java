@@ -2,6 +2,8 @@ package com.yuren.leetcodecnlearn;
 
 public class Q298 {
 
+    int result = 1;
+
     public int longestConsecutive(TreeNode root) {
         if (root == null) {
             return 0;
@@ -9,8 +11,6 @@ public class Q298 {
         helper(root);
         return result;
     }
-
-    int result = 1;
 
     public int helper(TreeNode root) {
         if (root == null) {

@@ -62,8 +62,7 @@ public class Q161 {
                     c2++;
                 }
             }
-            if (n1 - count != 1)
-                return false;
+            return n1 - count == 1;
         }
         return true;
     }

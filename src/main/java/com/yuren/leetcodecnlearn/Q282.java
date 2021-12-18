@@ -22,7 +22,7 @@ public class Q282 {
 
     /**
      * 中间的结果sum, mul, num都可能超出Integer的范围, 但是最终的结果可能算回到范围内
-     *
+     * <p>
      * 所以用了long, 讲道理吧... 虽然我觉得不讲道理
      *
      * @param i     处理到nums的第i位

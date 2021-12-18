@@ -12,8 +12,8 @@ import java.util.Map;
  */
 public class Q166 {
     public String fractionToDecimal(int numerator, int denominator) {
-        long numeratorLong = (long) numerator;
-        long denominatorLong = (long) denominator;
+        long numeratorLong = numerator;
+        long denominatorLong = denominator;
         if (numeratorLong % denominatorLong == 0) {
             return String.valueOf(numeratorLong / denominatorLong);
         }

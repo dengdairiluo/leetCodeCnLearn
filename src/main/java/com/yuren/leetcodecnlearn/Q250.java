@@ -15,15 +15,9 @@ public class Q250 {
             return true;
         }
 
-        boolean isLeftOk = false;
-        if (root.left == null || isSame(root.left) && root.val == root.left.val) {
-            isLeftOk = true;
-        }
+        boolean isLeftOk = root.left == null || isSame(root.left) && root.val == root.left.val;
 
-        boolean isRightOk = false;
-        if (root.right == null || isSame(root.right) && root.val == root.right.val) {
-            isRightOk = true;
-        }
+        boolean isRightOk = root.right == null || isSame(root.right) && root.val == root.right.val;
 
         if (isLeftOk && isRightOk) {
             ansCount++;

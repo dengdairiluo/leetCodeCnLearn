@@ -14,13 +14,16 @@ import java.util.Set;
  */
 public class Q353 {
 
-    private int width, height, foodId, score;
+    private final int width;
+    private final int height;
+    private int foodId;
+    private int score;
 
-    private int[][] food;
+    private final int[][] food;
 
-    private Deque<Integer> snack;
+    private final Deque<Integer> snack;
 
-    private Set<Integer> seen;
+    private final Set<Integer> seen;
 
     /**
      * Initialize your data structure here.

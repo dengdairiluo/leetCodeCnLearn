@@ -63,8 +63,7 @@ public class Q208 {
      */
     public boolean startsWith(String prefix) {
         Node lastNode = prefixExists(prefix);
-        if (lastNode == null) return false;
-        else return true;
+        return lastNode != null;
         // 前缀判断 只要有就行 包括前缀本身
     }
 

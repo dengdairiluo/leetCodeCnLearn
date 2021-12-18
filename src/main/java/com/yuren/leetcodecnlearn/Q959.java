@@ -30,9 +30,9 @@ public class Q959 {
 
 class UF {
     private final int[][] E = {{-1, -1, '\\'}, {-1, 0, '/'}, {0, -1, '/'}, {0, 0, '\\'}};
-    private int count;
     private final int[] parent;
     private final int[] size;
+    private int count;
     private int n, m;
     private String[] g;
     private int[] v;    // vis

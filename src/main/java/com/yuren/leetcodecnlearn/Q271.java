@@ -15,7 +15,7 @@ public class Q271 {
     public String intToString(String s) {
         int x = s.length();
         char[] bytes = new char[4];
-        for(int i = 3; i > -1; --i) {
+        for (int i = 3; i > -1; --i) {
             bytes[3 - i] = (char) (x >> (i * 8) & 0xff);
         }
         return new String(bytes);
@@ -24,7 +24,7 @@ public class Q271 {
     // Encodes a list of strings to a single string.
     public String encode(List<String> strs) {
         StringBuilder sb = new StringBuilder();
-        for(String s: strs) {
+        for (String s : strs) {
             sb.append(intToString(s));
             sb.append(s);
         }
@@ -34,8 +34,8 @@ public class Q271 {
     // Decodes bytes string to integer
     public int stringToInt(String bytesStr) {
         int result = 0;
-        for(char b : bytesStr.toCharArray()) {
-            result = (result << 8) + (int)b;
+        for (char b : bytesStr.toCharArray()) {
+            result = (result << 8) + (int) b;
         }
         return result;
     }

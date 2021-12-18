@@ -14,7 +14,7 @@ import java.util.Queue;
 public class Q297 {
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return "null";
         }
         return root.val + "," + serialize(root.left) + "," + serialize(root.right);
@@ -28,7 +28,7 @@ public class Q297 {
 
     private TreeNode dfs(Queue<String> queue) {
         String val = queue.poll();
-        if("null".equals(val)){
+        if ("null".equals(val)) {
             return null;
         }
         TreeNode root = new TreeNode(Integer.parseInt(val));
@@ -36,11 +36,14 @@ public class Q297 {
         root.right = dfs(queue);
         return root;
     }
-    
+
     private static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }

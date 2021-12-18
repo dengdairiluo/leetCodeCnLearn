@@ -31,11 +31,12 @@ public class Q248 {
 
     /**
      * 填充可能的中心对称数到 chs
+     *
      * @param chs
-     * @param lo    左指针
-     * @param hi    右指针
-     * @param low   下限
-     * @param high  上限
+     * @param lo   左指针
+     * @param hi   右指针
+     * @param low  下限
+     * @param high 上限
      */
     public void getStrobogrammatic(char[] chs, int lo, int hi, String low, String high) {
         if (lo > hi) {  // 填充完毕，开始统计个数
@@ -58,17 +59,14 @@ public class Q248 {
 
     /**
      * 判断 s1 是否大于 s2
+     *
      * @param s1
      * @param s2
      * @return
      */
     public boolean compare(String s1, String s2) {
         if (s1.length() == s2.length()) {
-            if (s1.compareTo(s2) >= 0) {
-                return true;
-            } else {
-                return false;
-            }
+            return s1.compareTo(s2) >= 0;
         }
         return true;
     }

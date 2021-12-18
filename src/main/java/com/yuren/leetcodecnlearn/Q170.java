@@ -11,8 +11,8 @@ import java.util.Set;
  * @date 2021-10-04 21:49
  */
 public class Q170 {
-    private Set<Integer> all;
-    private Set<Integer> duplicate;
+    private final Set<Integer> all;
+    private final Set<Integer> duplicate;
 
     /**
      * Initialize your data structure here.

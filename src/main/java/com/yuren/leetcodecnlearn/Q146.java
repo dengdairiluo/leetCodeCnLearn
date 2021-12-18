@@ -11,10 +11,12 @@ import java.util.Map;
  * @date 2021-09-26 22:31
  */
 public class Q146 {
-    private Map<Integer, DLinkedNode> cache = new HashMap<>();
+    private final Map<Integer, DLinkedNode> cache = new HashMap<>();
     private int size;
-    private int capacity;
-    private DLinkedNode head, tail;
+    private final int capacity;
+    private final DLinkedNode head;
+    private final DLinkedNode tail;
+
     public Q146(int capacity) {
         this.size = 0;
         this.capacity = capacity;

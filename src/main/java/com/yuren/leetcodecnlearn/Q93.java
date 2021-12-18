@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q93 {
-    private String s;
-    int n;
     private final List<String> res = new ArrayList<>();
     private final List<String> path = new ArrayList<>();
+    int n;
+    private String s;
 
     public List<String> restoreIpAddresses(String s) {
         this.s = s;

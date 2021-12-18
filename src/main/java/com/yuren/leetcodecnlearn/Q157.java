@@ -9,9 +9,19 @@ package com.yuren.leetcodecnlearn;
  */
 public class Q157 {
     /**
+     * api
+     *
+     * @param buf4
+     * @return
+     */
+    private static int read4(char[] buf4) {
+        return -1;
+    }
+
+    /**
      * @param buf Destination buffer
      * @param n   Number of characters to read
-     * @return    The number of actual characters read
+     * @return The number of actual characters read
      */
     public int read(char[] buf, int n) {
         int idx = 0;
@@ -22,14 +32,5 @@ public class Q157 {
             size = read4(buf4);
         }
         return idx;
-    }
-
-    /**
-     * api
-     * @param buf4
-     * @return
-     */
-    private static int read4(char[] buf4) {
-        return -1;
     }
 }

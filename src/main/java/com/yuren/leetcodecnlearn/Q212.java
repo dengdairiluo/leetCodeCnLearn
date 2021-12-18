@@ -16,12 +16,14 @@ public class Q212 {
     Set<String> set = new HashSet<>();
     List<String> ans = new ArrayList<>();
     char[][] board;
-    int[][] dirs = new int[][]{{1,0},{-1,0},{0,1},{0,-1}};
+    int[][] dirs = new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
     int n, m;
     boolean[][] vis = new boolean[15][15];
+
     public List<String> findWords(char[][] _board, String[] words) {
         board = _board;
-        m = board.length; n = board[0].length;
+        m = board.length;
+        n = board[0].length;
         for (String w : words) set.add(w);
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < m; i++) {
@@ -35,8 +37,9 @@ public class Q212 {
         }
         return ans;
     }
+
     void dfs(int i, int j, StringBuilder sb) {
-        if (sb.length() > 10) return ;
+        if (sb.length() > 10) return;
         if (set.contains(sb.toString())) {
             ans.add(sb.toString());
             set.remove(sb.toString());

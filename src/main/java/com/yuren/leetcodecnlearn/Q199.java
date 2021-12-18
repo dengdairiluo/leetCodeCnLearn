@@ -13,7 +13,7 @@ import java.util.Queue;
  * @date 2021-10-12 21:53
  */
 public class Q199 {
-    private List<Integer> ans = new ArrayList<>();
+    private final List<Integer> ans = new ArrayList<>();
 
     public List<Integer> rightSideView(TreeNode root) {
         if (root == null) return ans;

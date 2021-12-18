@@ -2,13 +2,6 @@ package com.yuren.leetcodecnlearn;
 
 public class Q333 {
 
-    private static class Result {
-        TreeNode node; // BST根节点
-        int size; // BST的size
-        int max; // BST的最大值
-        int min; // BST的最小值
-    }
-
     public int largestBSTSubtree(TreeNode root) {
         Result r = visit(root);
         return r == null ? 0 : r.size;
@@ -46,9 +39,14 @@ public class Q333 {
         if (l != null) {
             return l;
         }
-        if (r != null) return r;
+        return r;
+    }
 
-        return null;
+    private static class Result {
+        TreeNode node; // BST根节点
+        int size; // BST的size
+        int max; // BST的最大值
+        int min; // BST的最小值
     }
 
     private static class TreeNode {

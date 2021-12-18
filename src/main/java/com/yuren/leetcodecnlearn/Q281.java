@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Q281 {
     private final ArrayList<Integer>[] listArr;
+    private final int size;
     private int i;
     private int j;
-    private final int size;
 
     public Q281(List<Integer> v1, List<Integer> v2) {
         listArr = new ArrayList[2];

@@ -13,22 +13,18 @@ public class Q32 {
     public int longestValidParentheses(String s) {
         Stack<Integer> st = new Stack<Integer>();
         int ans = 0;
-        for(int i = 0 ,start = 0;i < s.length();i ++)
-        {
-            if( s.charAt(i) == '(') {
+        for (int i = 0, start = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
                 st.add(i);
-            } else
-            {
-                if(!st.isEmpty())
-                {
+            } else {
+                if (!st.isEmpty()) {
                     st.pop();
-                    if(st.isEmpty()) {
-                        ans = Math.max(ans,i - start + 1);
+                    if (st.isEmpty()) {
+                        ans = Math.max(ans, i - start + 1);
                     } else {
-                        ans = Math.max(ans,i - st.peek());
+                        ans = Math.max(ans, i - st.peek());
                     }
-                }
-                else {
+                } else {
                     start = i + 1;
                 }
             }

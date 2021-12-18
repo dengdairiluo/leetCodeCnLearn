@@ -18,15 +18,13 @@ public class Q62 {
     public int uniquePaths2(int m, int n) {
         int col = n;
 
-        int [][] dp = new int [m][col];
-        for (int c = 0; c < col; c ++)
+        int[][] dp = new int[m][col];
+        for (int c = 0; c < col; c++)
             dp[0][c] = 1;
-        for (int r = 0; r < m; r ++)
+        for (int r = 0; r < m; r++)
             dp[r][0] = 1;
-        for (int r = 1; r < m; r ++)
-        {
-            for (int c = 1; c < col; c ++)
-            {
+        for (int r = 1; r < m; r++) {
+            for (int c = 1; c < col; c++) {
                 dp[r][c] = dp[r - 1][c] + dp[r][c - 1];
             }
         }

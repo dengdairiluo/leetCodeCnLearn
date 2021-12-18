@@ -11,9 +11,10 @@ import java.util.List;
  */
 public class Q120 {
     Integer[][] memo;
+
     public int minimumTotal(List<List<Integer>> triangle) {
         memo = new Integer[triangle.size()][triangle.size()];
-        return  dfs(triangle, 0, 0);
+        return dfs(triangle, 0, 0);
     }
 
     private int dfs(List<List<Integer>> triangle, int i, int j) {

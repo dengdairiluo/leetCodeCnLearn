@@ -22,12 +22,12 @@ public class Q164 {
             min = Math.min(nums[i], min);
             max = Math.max(nums[i], max);
         }
-        if(max - min == 0) {
+        if (max - min == 0) {
             return 0;
         }
 
         //算出每个箱子的范围
-        int interval = (int) Math.ceil((double)(max - min) / (n - 1));
+        int interval = (int) Math.ceil((double) (max - min) / (n - 1));
 
         //每个箱子里数字的最小值和最大值
         int[] bucketMin = new int[n - 1];
@@ -43,7 +43,7 @@ public class Q164 {
             //当前数字所在箱子编号
             int index = (nums[i] - min) / interval;
             //最大数和最小数不需要考虑
-            if(nums[i] == min || nums[i] == max) {
+            if (nums[i] == min || nums[i] == max) {
                 continue;
             }
             //更新当前数字所在箱子的最小值和最大值

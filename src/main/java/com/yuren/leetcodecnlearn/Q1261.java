@@ -4,8 +4,8 @@ import java.util.BitSet;
 import java.util.LinkedList;
 
 public class Q1261 {
-    LinkedList<TreeNode> ll = new LinkedList<>();
     private final BitSet bs = new BitSet();
+    LinkedList<TreeNode> ll = new LinkedList<>();
     private int level = 1;//下一次遍历的层数
     private int total = 0;//假设是全二叉树应该包含的总数
 

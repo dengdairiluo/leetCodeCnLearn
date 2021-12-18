@@ -11,7 +11,7 @@ import java.util.HashMap;
  * @date 2021-10-25 22:45
  */
 public class Q244 {
-    private HashMap<String, ArrayList<Integer>> map;
+    private final HashMap<String, ArrayList<Integer>> map;
 
     public Q244(String[] wordsDict) {
         map = new HashMap<>();

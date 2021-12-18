@@ -11,6 +11,7 @@ public class Q251 {
     int i;
     int j;
     int[][] v;
+
     public Q251(int[][] v) {
         this.i = 0;
         this.j = 0;
@@ -18,15 +19,14 @@ public class Q251 {
     }
 
     public int next() {
-        while(this.v[i].length == 0){
-            i ++;
-            j=0;
+        while (this.v[i].length == 0) {
+            i++;
+            j = 0;
         }
         int res = this.v[i][j];
-        if (j < this.v[i].length - 1){
+        if (j < this.v[i].length - 1) {
             j++;
-        }
-        else{
+        } else {
             i++;
             j = 0;
         }
@@ -35,15 +35,13 @@ public class Q251 {
 
     public boolean hasNext() {
 
-        try{
-            while(this.v[i].length == 0){
-                i ++;
-                j=0;
+        try {
+            while (this.v[i].length == 0) {
+                i++;
+                j = 0;
             }
-            if (this.i < this.v.length && this.j < this.v[this.i].length) return true;
-            else return false;
-        }
-        catch(Exception e){
+            return this.i < this.v.length && this.j < this.v[this.i].length;
+        } catch (Exception e) {
             return false;
         }
     }

@@ -28,10 +28,7 @@ public class Q473 {
         if (index == -1) {
             //如果火柴都访问完了，并且size的4个边的长度都相等，说明是正方形，直接返回true，
             //否则返回false
-            if (size[0] == size[1] && size[1] == size[2] && size[2] == size[3]) {
-                return true;
-            }
-            return false;
+            return size[0] == size[1] && size[1] == size[2] && size[2] == size[3];
         }
         //到这一步说明火柴还没访问完
         for (int i = 0; i < size.length; i++) {

@@ -11,6 +11,11 @@ import java.util.Random;
  */
 public class Q470 {
     private static final Random rand = new Random();
+
+    private static int rand7() {
+        return rand.nextInt(7);
+    }
+
     public int rand10() {
         while (true) {
             int num = (rand7() - 1) * 7 + rand7();
@@ -30,9 +35,5 @@ public class Q470 {
             }
 
         }
-    }
-
-    private static int rand7() {
-        return rand.nextInt(7);
     }
 }

@@ -21,7 +21,7 @@ public class Q1628 {
         public abstract int evaluate();
     }
 
-    class OpNode extends Node {
+    private class OpNode extends Node {
         String value;
         private OpNode left;
         private OpNode right;

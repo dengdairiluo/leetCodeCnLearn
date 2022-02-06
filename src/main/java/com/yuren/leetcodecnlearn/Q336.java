@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 /**
  * Created with Intellij IDEA.
  * Description:
@@ -69,17 +70,17 @@ public class Q336 {
         }
         return true;
     }
-}
 
-class Node {
-    public Node[] children;
-    public List<Integer> words;
-    public List<Integer> suffixs;
+    private static class Node {
+        public Node[] children;
+        public List<Integer> words;
+        public List<Integer> suffixs;
 
-    public Node() {
-        this.children = new Node[26];
-        this.words = new ArrayList<>();
-        this.suffixs = new ArrayList<>();
+        public Node() {
+            this.children = new Node[26];
+            this.words = new ArrayList<>();
+            this.suffixs = new ArrayList<>();
+        }
     }
 }
 

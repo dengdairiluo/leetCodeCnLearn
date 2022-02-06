@@ -42,7 +42,7 @@ public class Q1612 {
         inOrder(node.right, flag);
     }
 
-    class Node {
+    private static class Node {
         char val;
         Node left;
         Node right;

@@ -44,7 +44,7 @@ public class Q1490 {
         return cloneRoot;
     }
 
-    class Node {
+    private static class Node {
         public int val;
         public List<Node> children;
 

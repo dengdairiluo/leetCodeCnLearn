@@ -16,14 +16,11 @@ public class Q353 {
 
     private final int width;
     private final int height;
+    private final int[][] food;
+    private final Deque<Integer> snack;
+    private final Set<Integer> seen;
     private int foodId;
     private int score;
-
-    private final int[][] food;
-
-    private final Deque<Integer> snack;
-
-    private final Set<Integer> seen;
 
     /**
      * Initialize your data structure here.

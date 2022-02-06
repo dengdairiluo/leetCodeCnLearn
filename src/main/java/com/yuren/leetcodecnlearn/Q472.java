@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Q472 {
 
-    private Node root = new Node();
+    private final Node root = new Node();
 
     public List<String> findAllConcatenatedWordsInADict(String[] words) {
         // 字典树 + DFS

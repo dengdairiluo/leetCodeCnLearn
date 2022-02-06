@@ -20,17 +20,6 @@ public class Q432 {
     private final DlNode head;
     private final DlNode tail;
 
-    private static class DlNode {
-        int val;
-        Set<String> keys;
-        DlNode pre, next;
-
-        public DlNode(int val) {
-            this.val = val;
-            this.keys = new HashSet<>();
-        }
-    }
-
     public Q432() {
         cache = new HashMap<>();
         freq = new HashMap<>();
@@ -125,6 +114,17 @@ public class Q432 {
             return "";
         } else {
             return tail.pre.keys.iterator().next();
+        }
+    }
+
+    private static class DlNode {
+        int val;
+        Set<String> keys;
+        DlNode pre, next;
+
+        public DlNode(int val) {
+            this.val = val;
+            this.keys = new HashSet<>();
         }
     }
 }

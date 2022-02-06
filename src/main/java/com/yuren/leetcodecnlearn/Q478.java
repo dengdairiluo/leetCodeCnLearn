@@ -1,11 +1,11 @@
 package com.yuren.leetcodecnlearn;
 
 public class Q478 {
-    private double x;
+    private final double x;
 
-    private double y;
+    private final double y;
 
-    private double radius;
+    private final double radius;
 
     public Q478(double _radius, double x_center, double y_center) {
         radius = _radius;

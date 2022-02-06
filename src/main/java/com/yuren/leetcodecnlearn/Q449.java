@@ -56,7 +56,7 @@ public class Q449 {
     public TreeNode deserialize(String data) {
         ArrayDeque<Integer> nums = new ArrayDeque<>();
         int n = data.length();
-        for (int i = 0; i < (int) (n / 4); ++i) {
+        for (int i = 0; i < (n / 4); ++i) {
             nums.add(stringToInt(data.substring(4 * i, 4 * i + 4)));
         }
 

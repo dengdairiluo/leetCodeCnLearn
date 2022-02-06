@@ -77,7 +77,8 @@ public class Q428 {
         public int val;
         public List<Node> children;
 
-        public Node() {}
+        public Node() {
+        }
 
         public Node(int _val) {
             val = _val;
@@ -87,5 +88,6 @@ public class Q428 {
             val = _val;
             children = _children;
         }
-    };
+    }
+
 }

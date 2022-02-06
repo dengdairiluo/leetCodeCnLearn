@@ -25,7 +25,7 @@ public class Q1305 {
         inOrder(root.right);
     }
 
-    public class TreeNode {
+    private static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

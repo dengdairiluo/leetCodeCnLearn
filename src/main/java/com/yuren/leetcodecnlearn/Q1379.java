@@ -45,7 +45,7 @@ public class Q1379 {
         return getTargetCopy(original.right, cloned.right, target);
     }
 
-    public class TreeNode {
+    private static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

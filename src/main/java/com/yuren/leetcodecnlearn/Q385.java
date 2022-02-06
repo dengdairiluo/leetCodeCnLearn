@@ -48,10 +48,8 @@ public class Q385 {
     }
 
     private static class NestedInteger {
-        private int integer;
-
-
         private final List<NestedInteger> list = new ArrayList<>();
+        private int integer;
         // Constructor initializes an empty nested list.
 
         public NestedInteger() {

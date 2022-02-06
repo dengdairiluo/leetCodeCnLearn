@@ -19,7 +19,7 @@ public class Q394 {
                     multi--;
                 }
             } else if (s.charAt(i) == ']') return new String[]{String.valueOf(i), res.toString()};
-            else res.append(String.valueOf(s.charAt(i)));
+            else res.append(s.charAt(i));
             i++;
         }
         return new String[]{res.toString()};

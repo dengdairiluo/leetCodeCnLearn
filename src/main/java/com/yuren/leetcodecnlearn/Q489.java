@@ -12,7 +12,7 @@ import java.util.HashSet;
 public class Q489 {
 
     // the order of the directions matters
-    private int[][] dirs = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    private final int[][] dirs = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
     public void cleanRoom(Robot robot) {
         HashSet<String> visited = new HashSet<>();
@@ -41,16 +41,16 @@ public class Q489 {
     interface Robot {
         // Returns true if the cell in front is open and robot moves into the cell.
         // Returns false if the cell in front is blocked and robot stays in the current cell.
-        public boolean move();
+        boolean move();
 
         // Robot will stay in the same cell after calling turnLeft/turnRight.
         // Each turn will be 90 degrees.
-        public void turnLeft();
+        void turnLeft();
 
-        public void turnRight();
+        void turnRight();
 
         // Clean the current cell.
-        public void clean();
+        void clean();
     }
 }
 

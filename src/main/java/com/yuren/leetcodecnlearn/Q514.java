@@ -54,7 +54,7 @@ public class Q514 {
         char[] ringChar = ring.toCharArray();
         char[] keyChar = key.toCharArray();
 
-        ArrayList<Integer>[] lists = new ArrayList<Integer>[26];
+        ArrayList<Integer>[] lists = new ArrayList[26];
 
         for (int i = 0; i < 26; i++) {
             lists[i] = new ArrayList<>();

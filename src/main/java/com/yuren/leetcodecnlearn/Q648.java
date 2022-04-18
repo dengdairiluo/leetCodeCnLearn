@@ -10,6 +10,15 @@ import java.util.List;
  * @date 2022-04-13 23:17
  */
 public class Q648 {
+    private static class TrieNode {
+        TrieNode[] children;
+        String word;
+
+        TrieNode() {
+            children = new TrieNode[26];
+        }
+    }
+
     class Solution {
         public String replaceWords(List<String> roots, String sentence) {
             TrieNode trie = new TrieNode();
@@ -38,15 +47,6 @@ public class Q648 {
                 ans.append(cur.word != null ? cur.word : word);
             }
             return ans.toString();
-        }
-    }
-
-    private static class TrieNode {
-        TrieNode[] children;
-        String word;
-
-        TrieNode() {
-            children = new TrieNode[26];
         }
     }
 }

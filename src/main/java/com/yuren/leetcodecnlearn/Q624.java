@@ -22,7 +22,7 @@ public class Q624 {
             int m = item.size();
             int crrMin = item.get(0);
             int crrMax = item.get(m - 1);
-            res = getMax(crrMax - min, res, max-crrMin);
+            res = getMax(crrMax - min, res, max - crrMin);
             max = Math.max(crrMax, max);
             min = Math.min(crrMin, min);
         }

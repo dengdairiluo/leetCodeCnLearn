@@ -5,11 +5,19 @@ package com.yuren.leetcodecnlearn;
  * Description:
  *
  * @author lujiang
- * @date 2022-06-16 23:40
+ * @date 2022-06-17 23:43
  */
 public class Q795 {
-    public int preimageSizeFZF(int k) {
-        return k % 61035156 % 12207031 % 2441406 % 488281 % 97656 % 19531 % 3906 % 781 % 156 % 31 == 30 ? 0 :
-                (k % 61035156 % 12207031 % 2441406 % 488281 % 97656 % 19531 % 3906 % 781 % 156 % 31 % 6 / 5 == 0 ? 1 : 0) * 5;
+    public int numSubarrayBoundedMax(int[] A, int L, int R) {
+        return count(A, R) - count(A, L - 1);
+    }
+
+    public int count(int[] A, int bound) {
+        int ans = 0, cur = 0;
+        for (int x : A) {
+            cur = x <= bound ? cur + 1 : 0;
+            ans += cur;
+        }
+        return ans;
     }
 }

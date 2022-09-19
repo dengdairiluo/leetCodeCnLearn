@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+
 public class J06 {
     public int[] reversePrint(ListNode head) {
         ListNode node = head;
@@ -17,12 +19,4 @@ public class J06 {
         return nums;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+
 public class Q24 {
     public ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null) {
@@ -11,20 +13,5 @@ public class Q24 {
         return next;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

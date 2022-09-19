@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+
 public class J25 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         //递归实现
@@ -30,12 +32,4 @@ public class J25 {
         return head;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

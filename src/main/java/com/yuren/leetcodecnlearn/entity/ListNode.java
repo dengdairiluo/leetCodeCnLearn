@@ -1,7 +1,5 @@
 package com.yuren.leetcodecnlearn.entity;
 
-import com.yuren.leetcodecnlearn.J06;
-
 /**
  * Created with Intellij IDEA.
  * Description:
@@ -15,5 +13,10 @@ public class ListNode {
 
     public ListNode(int x) {
         val = x;
+    }
+
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
     }
 }

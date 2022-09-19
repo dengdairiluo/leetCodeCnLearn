@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+
 public class J24 {
     public ListNode reverseList(ListNode head) {
         ListNode pre = null, cur = head, next = null;
@@ -12,12 +14,4 @@ public class J24 {
         return pre;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

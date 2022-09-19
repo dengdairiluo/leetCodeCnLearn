@@ -12,7 +12,12 @@ public class J02079 {
         return res;
     }
 
-    //使用递归解决问题
+    /**
+     * 使用递归解决问题
+     *
+     * @param len
+     * @param nums
+     */
     public void helper(int len, int[] nums) {
         if (len == nums.length) {
             res.add(new ArrayList<>(list));

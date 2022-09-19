@@ -11,10 +11,13 @@ public class J02042 {
     }
 
     public int ping(int t) {
-        list.add(t);//添加到队列
-        while (t - 3000 > list.peek()) {//超过3000差值即队头出列
+        //添加到队列
+        list.add(t);
+        //超过3000差值即队头出列
+        while (t - 3000 > list.peek()) {
             list.poll();
         }
-        return list.size();//返回大小
+        //返回大小
+        return list.size();
     }
 }

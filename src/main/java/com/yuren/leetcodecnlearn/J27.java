@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.TreeNode;
+
 import java.util.Stack;
 
 public class J27 {
@@ -41,14 +43,5 @@ public class J27 {
 
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
 }

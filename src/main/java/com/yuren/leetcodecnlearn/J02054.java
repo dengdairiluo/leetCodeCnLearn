@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.TreeNode;
+
 /**
  * Created with Intellij IDEA.
  * Description:
@@ -15,7 +17,11 @@ public class J02054 {
         return root;
     }
 
-    //改进版的中序遍历
+    /**
+     * 改进版的中序遍历
+     *
+     * @param root
+     */
     public void inorder(TreeNode root) {
         if (root == null)
             return;
@@ -25,22 +31,4 @@ public class J02054 {
         inorder(root.left);
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 }

@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+
 public class Q445 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null) {
@@ -65,20 +67,4 @@ public class Q445 {
         return newHead;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

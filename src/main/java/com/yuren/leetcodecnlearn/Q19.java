@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+
 public class Q19 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(0, head);
@@ -22,20 +24,4 @@ public class Q19 {
         return length;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

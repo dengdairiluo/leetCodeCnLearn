@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+
 import java.util.Random;
 
 /**
@@ -47,20 +49,4 @@ public class Q382 {
         return len;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

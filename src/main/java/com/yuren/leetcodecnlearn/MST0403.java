@@ -1,5 +1,8 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+import com.yuren.leetcodecnlearn.entity.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -33,25 +36,6 @@ public class MST0403 {
     private static int getDepth(TreeNode tree) {
         if (tree == null) return 0;
         return Math.max(getDepth(tree.left), getDepth(tree.right)) + 1;
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
     }
 
 }

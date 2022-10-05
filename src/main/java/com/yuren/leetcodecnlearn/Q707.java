@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+
 /**
  * Created with Intellij IDEA.
  * Description:
@@ -84,12 +86,4 @@ public class Q707 {
         pred.next = pred.next.next;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

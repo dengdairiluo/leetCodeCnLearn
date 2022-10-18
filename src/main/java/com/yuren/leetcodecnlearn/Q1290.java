@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+
 public class Q1290 {
 
     public static int getDecimalValue(ListNode head) {
@@ -12,14 +14,5 @@ public class Q1290 {
         return ans;
     }
 
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
 }

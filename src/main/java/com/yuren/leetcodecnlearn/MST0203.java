@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn;
 
+import com.yuren.leetcodecnlearn.entity.ListNode;
+
 public class MST0203 {
 
     public void deleteNode(ListNode node) {
@@ -7,12 +9,4 @@ public class MST0203 {
         node.next = node.next.next;
     }
 
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

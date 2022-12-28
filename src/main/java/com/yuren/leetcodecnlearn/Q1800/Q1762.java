@@ -1,4 +1,4 @@
-package com.yuren.leetcodecnlearn;
+package com.yuren.leetcodecnlearn.Q1800;
 
 import java.util.ArrayList;
 import java.util.Arrays;

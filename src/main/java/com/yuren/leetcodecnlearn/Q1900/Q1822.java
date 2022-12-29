@@ -1,4 +1,4 @@
-package com.yuren.leetcodecnlearn;
+package com.yuren.leetcodecnlearn.Q1900;
 
 public class Q1822 {
 

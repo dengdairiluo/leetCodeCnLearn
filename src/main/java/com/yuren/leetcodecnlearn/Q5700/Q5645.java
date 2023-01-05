@@ -1,4 +1,4 @@
-package com.yuren.leetcodecnlearn;
+package com.yuren.leetcodecnlearn.Q5700;
 
 /**
  * Created with Intellij IDEA.

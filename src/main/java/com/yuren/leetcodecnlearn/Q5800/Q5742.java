@@ -1,4 +1,4 @@
-package com.yuren.leetcodecnlearn;
+package com.yuren.leetcodecnlearn.Q5800;
 
 import java.util.Arrays;
 import java.util.Comparator;

@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Q1059 {
     public boolean leadsToDestination(int n, int[][] edges, int source, int destination) {
-        List<Integer>[] adj = new ArrayList<>[n];
+        List<Integer>[] adj = new ArrayList[n];
         for (int i = 0; i < n; ++i) {
             adj[i] = new ArrayList<>();
         }

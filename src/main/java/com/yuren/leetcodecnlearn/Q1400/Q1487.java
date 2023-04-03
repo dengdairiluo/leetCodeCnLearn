@@ -1,5 +1,8 @@
 package com.yuren.leetcodecnlearn.Q1400;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created with Intellij IDEA.
  * Description:

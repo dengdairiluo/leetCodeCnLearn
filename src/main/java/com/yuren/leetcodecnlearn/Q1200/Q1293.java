@@ -1,5 +1,7 @@
 package com.yuren.leetcodecnlearn.Q1200;
 
+import java.util.Arrays;
+
 /**
  * Created with Intellij IDEA.
  * Description:

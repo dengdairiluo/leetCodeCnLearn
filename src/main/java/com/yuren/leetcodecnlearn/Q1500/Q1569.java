@@ -62,64 +62,68 @@ public class Q1569 {
 
         return (found.get(nums[0] - 1).ans - 1 + MOD) % MOD;
     }
-}
 
-class TreeNode {
-    TreeNode left;
-    TreeNode right;
-    int size;
-    int ans;
+    private static class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int size;
+        int ans;
 
-    TreeNode() {
-        size = 1;
-        ans = 0;
-    }
-}
-
-class UnionFind {
-    public int[] parent;
-    public int[] size;
-    public int[] root;
-    public int n;
-
-    public UnionFind(int n) {
-        this.n = n;
-        parent = new int[n];
-        size = new int[n];
-        root = new int[n];
-        Arrays.fill(size, 1);
-        for (int i = 0; i < n; i++) {
-            parent[i] = i;
-            root[i] = i;
+        TreeNode() {
+            size = 1;
+            ans = 0;
         }
     }
 
-    public int findset(int x) {
-        return parent[x] == x ? x : (parent[x] = findset(parent[x]));
-    }
 
-    public int getroot(int x) {
-        return root[findset(x)];
-    }
+    private static class UnionFind {
+        public int[] parent;
+        public int[] size;
+        public int[] root;
+        public int n;
 
-    public void unite(int x, int y) {
-        root[y] = root[x];
-        if (size[x] < size[y]) {
-            int temp = x;
-            x = y;
-            y = temp;
+        public UnionFind(int n) {
+            this.n = n;
+            parent = new int[n];
+            size = new int[n];
+            root = new int[n];
+            Arrays.fill(size, 1);
+            for (int i = 0; i < n; i++) {
+                parent[i] = i;
+                root[i] = i;
+            }
         }
-        parent[y] = x;
-        size[x] += size[y];
-    }
 
-    public boolean findAndUnite(int x, int y) {
-        int x0 = findset(x);
-        int y0 = findset(y);
-        if (x0 != y0) {
-            unite(x0, y0);
-            return true;
+        public int findset(int x) {
+            return parent[x] == x ? x : (parent[x] = findset(parent[x]));
         }
-        return false;
+
+        public int getroot(int x) {
+            return root[findset(x)];
+        }
+
+        public void unite(int x, int y) {
+            root[y] = root[x];
+            if (size[x] < size[y]) {
+                int temp = x;
+                x = y;
+                y = temp;
+            }
+            parent[y] = x;
+            size[x] += size[y];
+        }
+
+        public boolean findAndUnite(int x, int y) {
+            int x0 = findset(x);
+            int y0 = findset(y);
+            if (x0 != y0) {
+                unite(x0, y0);
+                return true;
+            }
+            return false;
+        }
     }
 }
+
+
+

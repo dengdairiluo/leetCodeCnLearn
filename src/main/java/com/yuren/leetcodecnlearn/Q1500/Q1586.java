@@ -25,7 +25,9 @@ public class Q1586 {
     }
 
     public void dfs(TreeNode root) {
-        if (root == null) return;
+        if (root == null) {
+            return;
+        }
         dfs(root.left);
         list.add(root.val);
         dfs(root.right);

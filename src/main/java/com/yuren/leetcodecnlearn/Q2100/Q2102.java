@@ -1,4 +1,4 @@
-package com.yuren.leetcodecnlearn.Q2000;
+package com.yuren.leetcodecnlearn.Q2100;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

@@ -13,7 +13,7 @@ public class Q2024 {
         int left = 0;
         int[] h = new int[97];
         int res = 0;
-        char[]  arr = answerKey.toCharArray();
+        char[] arr = answerKey.toCharArray();
         for (int right = 0; right < arr.length; right++) {
             h[arr[right]]++;
             max = Math.max(max, h[arr[right]]);

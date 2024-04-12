@@ -8,9 +8,8 @@ package com.yuren.leetcodecnlearn.Q700;
  * @date 2022-06-08 22:39
  */
 public class Q778 {
-    private int N;
-
     public static final int[][] DIRECTIONS = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+    private int N;
 
     public int swimInWater(int[][] grid) {
         this.N = grid.length;

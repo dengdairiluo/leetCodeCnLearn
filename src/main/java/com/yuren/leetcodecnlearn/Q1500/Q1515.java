@@ -8,10 +8,10 @@ package com.yuren.leetcodecnlearn.Q1500;
  * @date 2023-04-12 23:23
  */
 public class Q1515 {
-    //答案存放处
-    private double ans;
     //上、右、下、左方向数组
     private static final int[][] DI = {{0, -1}, {1, 0}, {0, 1}, {-1, 0}};
+    //答案存放处
+    private double ans;
 
     public double getMinDistSum(int[][] positions) {
         //服务中心点

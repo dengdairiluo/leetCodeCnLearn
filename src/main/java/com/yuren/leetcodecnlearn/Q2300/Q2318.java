@@ -25,14 +25,14 @@ public class Q2318 {
             }
     }
 
+    static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+
     public int distinctSequences(int n) {
         double ans = 0L;
         for (int v : f[n])
             ans += v;
         return (int) (ans % MOD + MOD) % MOD; // 保证结果非负
-    }
-
-    static int gcd(int a, int b) {
-        return b == 0 ? a : gcd(b, a % b);
     }
 }

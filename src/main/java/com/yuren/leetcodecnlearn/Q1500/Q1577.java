@@ -31,9 +31,9 @@ public class Q1577 {
     private Map<Long, Integer> getMap(int[] nums) {
         Map<Long, Integer> map = new HashMap<>();
 
-        for (int x: nums) {
+        for (int x : nums) {
             long square = (long) x * x;
-            map.put(square, map.getOrDefault(square,0) + 1);
+            map.put(square, map.getOrDefault(square, 0) + 1);
         }
         return map;
     }
@@ -43,7 +43,7 @@ public class Q1577 {
         int total = 0;
         Arrays.sort(nums);
 
-        for (long key: map.keySet()) {
+        for (long key : map.keySet()) {
             int count = map.get(key);
             int left = 0, right = n - 1;
 
@@ -68,7 +68,7 @@ public class Q1577 {
                             countRight++;
                         }
 
-                        total +=  count * countLeft * countRight;
+                        total += count * countLeft * countRight;
                     }
                 }
             }

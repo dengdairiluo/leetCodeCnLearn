@@ -10,55 +10,6 @@ import java.util.*;
  * @date 2022-10-24 23:50
  */
 public class Q1096 {
-    private static class MySet {
-        HashSet<String> vals;
-
-        public MySet() {
-            vals = new HashSet<>();
-        }
-
-        public MySet(HashSet<String> v) {
-            vals = v;
-        }
-
-        public void union(MySet another) {
-            vals.addAll(another.vals);
-        }
-
-        public void multi(MySet another) {
-            if (another.vals.size() == 0) {
-                return;
-            }
-            if (vals.size() == 0) {
-                vals = another.vals;
-                return;
-            }
-            HashSet<String> newVals = new HashSet<>(vals.size() * another.vals.size());
-            for (String str1 : vals) {
-                for (String val : another.vals) {
-                    newVals.add(str1 + val);
-                }
-            }
-            vals = newVals;
-        }
-
-        public void multi(String str) {
-            if (str == null || str.length() == 0) {
-                return;
-            }
-            if (vals.size() == 0) {
-                vals.add(str);
-                return;
-            }
-            Iterator<String> it = vals.iterator();
-            HashSet<String> newVals = new HashSet<>(vals.size());
-            while (it.hasNext()) {
-                newVals.add(it.next() + str);
-            }
-            vals = newVals;
-        }
-    }
-
     public List<String> braceExpansionII(String expression) {
         MySet ret = braceExpansionIIInner(expression);
         String[] rett = ret.vals.toArray(new String[0]);
@@ -106,5 +57,54 @@ public class Q1096 {
         }
         ret.union(pre);
         return ret;
+    }
+
+    private static class MySet {
+        HashSet<String> vals;
+
+        public MySet() {
+            vals = new HashSet<>();
+        }
+
+        public MySet(HashSet<String> v) {
+            vals = v;
+        }
+
+        public void union(MySet another) {
+            vals.addAll(another.vals);
+        }
+
+        public void multi(MySet another) {
+            if (another.vals.size() == 0) {
+                return;
+            }
+            if (vals.size() == 0) {
+                vals = another.vals;
+                return;
+            }
+            HashSet<String> newVals = new HashSet<>(vals.size() * another.vals.size());
+            for (String str1 : vals) {
+                for (String val : another.vals) {
+                    newVals.add(str1 + val);
+                }
+            }
+            vals = newVals;
+        }
+
+        public void multi(String str) {
+            if (str == null || str.length() == 0) {
+                return;
+            }
+            if (vals.size() == 0) {
+                vals.add(str);
+                return;
+            }
+            Iterator<String> it = vals.iterator();
+            HashSet<String> newVals = new HashSet<>(vals.size());
+            while (it.hasNext()) {
+                newVals.add(it.next() + str);
+            }
+            vals = newVals;
+        }
     }
 }

@@ -10,6 +10,35 @@ import java.util.*;
  * @date 2022-05-31 07:15
  */
 public class Q757 {
+    public int intersectionSizeTwo(int[][] intervals) {
+        int n = intervals.length;
+        List<Interval> intervalList = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            intervalList.add(new Interval(intervals[i][0], intervals[i][1]));
+        }
+        Collections.sort(intervalList);
+        Set<Integer> picked = new HashSet<>();
+        LT lt = new LT(0, 100000000);
+        for (int i = 0; i < n; i++) {
+            int x = intervalList.get(i).start;
+            int y = intervalList.get(i).end;
+            int cou = lt.count(x, y);
+            // System.out.println(cou);
+            if (cou < 1 || (cou < 2 && picked.contains(y))) {
+                picked.add(y - 1);
+                lt.insert(y - 1);
+                //     System.out.println(y-1);
+            }
+            if (cou < 2 && !picked.contains(y)) {
+                picked.add(y);
+                lt.insert(y);
+                //      System.out.println(y);
+            }
+
+        }
+        return picked.size();
+    }
+
     class LT {
         int start, end, num;
         LT left, right;
@@ -68,34 +97,5 @@ public class Q757 {
         public int compareTo(Interval interval) {
             return end.compareTo(interval.end);
         }
-    }
-
-    public int intersectionSizeTwo(int[][] intervals) {
-        int n = intervals.length;
-        List<Interval> intervalList = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            intervalList.add(new Interval(intervals[i][0], intervals[i][1]));
-        }
-        Collections.sort(intervalList);
-        Set<Integer> picked = new HashSet<>();
-        LT lt = new LT(0, 100000000);
-        for (int i = 0; i < n; i++) {
-            int x = intervalList.get(i).start;
-            int y = intervalList.get(i).end;
-            int cou = lt.count(x, y);
-            // System.out.println(cou);
-            if (cou < 1 || (cou < 2 && picked.contains(y))) {
-                picked.add(y - 1);
-                lt.insert(y - 1);
-                //     System.out.println(y-1);
-            }
-            if (cou < 2 && !picked.contains(y)) {
-                picked.add(y);
-                lt.insert(y);
-                //      System.out.println(y);
-            }
-
-        }
-        return picked.size();
     }
 }

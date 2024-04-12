@@ -11,18 +11,6 @@ import java.util.Deque;
  * @date 2022-10-19 23:28
  */
 public class Q1091 {
-    static class Node {
-        int x;
-        int y;
-        int step;
-
-        public Node(int start, int end, int step) {
-            this.x = start;
-            this.y = end;
-            this.step = step;
-        }
-    }
-
     int[] dx = {0, 0, -1, 1, -1, 1, -1, 1};
     int[] dy = {-1, 1, 0, 0, -1, -1, 1, 1};
 
@@ -58,6 +46,18 @@ public class Q1091 {
             }
         }
         return -1;
+    }
+
+    static class Node {
+        int x;
+        int y;
+        int step;
+
+        public Node(int start, int end, int step) {
+            this.x = start;
+            this.y = end;
+            this.step = step;
+        }
     }
 
 }

@@ -10,23 +10,6 @@ import java.util.*;
  * @date 2022-11-23 23:35
  */
 public class Q1169 {
-    private class Txn {
-        String name;
-        int time;
-        int amount;
-        String city;
-        String info; // original string
-
-        public Txn(String txn) {
-            String[] parts = txn.split(",");
-            name = parts[0];
-            time = Integer.parseInt(parts[1]);
-            amount = Integer.parseInt(parts[2]);
-            city = parts[3];
-            info = txn;
-        }
-    }
-
     public List<String> invalidTransactions(String[] transactions) {
         List<String> res = Collections.unmodifiableList(new ArrayList<>());
         Map<String, List<Txn>> txnMap = new HashMap<>();
@@ -55,5 +38,22 @@ public class Q1169 {
             if (Math.abs(t.time - t2.time) <= 60 && !t.city.equals(t2.city)) return false;
         }
         return true;
+    }
+
+    private class Txn {
+        String name;
+        int time;
+        int amount;
+        String city;
+        String info; // original string
+
+        public Txn(String txn) {
+            String[] parts = txn.split(",");
+            name = parts[0];
+            time = Integer.parseInt(parts[1]);
+            amount = Integer.parseInt(parts[2]);
+            city = parts[3];
+            info = txn;
+        }
     }
 }

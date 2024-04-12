@@ -38,7 +38,7 @@ public class Q2120 {
                         }
                         break;
                     }
-                    case 'D' : {
+                    case 'D': {
                         if (++y == n) {
                             break loop;
                         }

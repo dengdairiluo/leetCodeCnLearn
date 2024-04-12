@@ -11,21 +11,21 @@ import java.util.List;
  * @date 2023-04-13 23:42
  */
 public class Node {
-        public int val;
-        public List<Node> children;
+    public int val;
+    public List<Node> children;
 
 
-        public Node() {
-            children = new ArrayList<>();
-        }
+    public Node() {
+        children = new ArrayList<>();
+    }
 
-        public Node(int val) {
-            this.val = val;
-            children = new ArrayList<>();
-        }
+    public Node(int val) {
+        this.val = val;
+        children = new ArrayList<>();
+    }
 
-        public Node(int val, ArrayList<Node> children) {
-            this.val = val;
-            this.children = children;
-        }
+    public Node(int val, ArrayList<Node> children) {
+        this.val = val;
+        this.children = children;
+    }
 }

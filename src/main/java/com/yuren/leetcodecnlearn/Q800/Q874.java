@@ -29,7 +29,7 @@ public class Q874 {
             //left
             if (cmd == -2) {
                 di = (di + 3) % 4;
-            //right
+                //right
             } else if (cmd == -1) {
                 di = (di + 1) % 4;
             } else {

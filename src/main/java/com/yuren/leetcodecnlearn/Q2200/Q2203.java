@@ -10,6 +10,8 @@ import java.util.*;
  * @date 2024-01-28 23:20
  */
 public class Q2203 {
+    long inf = (long) 1e15;
+
     public long minimumWeight(int n, int[][] edges, int src1, int src2, int dest) {
         List<List<int[]>> g = new ArrayList<>();
         List<List<int[]>> dg = new ArrayList<>();
@@ -35,8 +37,6 @@ public class Q2203 {
 
         return ret >= inf ? -1 : ret;
     }
-
-    long inf = (long) 1e15;
 
     public long[] spfa(int src, List<List<int[]>> g) {
         long[] dist = new long[g.size()];

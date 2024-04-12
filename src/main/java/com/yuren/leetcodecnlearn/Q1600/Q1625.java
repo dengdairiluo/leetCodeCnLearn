@@ -21,6 +21,17 @@ public class Q1625 {
      */
     private static Value VL = new Value(), VB = new Value();
 
+    private static int gcd(int b, int l) {
+        while (true) {
+            if ((b %= l) == 0) {
+                return l;
+            }
+            if ((l %= b) == 0) {
+                return b;
+            }
+        }
+    }
+
     public String findLexSmallestString(String s, int a, int b) {
         // 初始化
         Value.MOD = (a & 1) == 0 ? 2 : a == 5 ? 5 : 1;
@@ -52,17 +63,6 @@ public class Q1625 {
             OUTPUT[a] = (char) (VL.get(a) + '0');
         }
         return new String(OUTPUT, 0, Value.LEN);
-    }
-
-    private static int gcd(int b, int l) {
-        while (true) {
-            if ((b %= l) == 0) {
-                return l;
-            }
-            if ((l %= b) == 0) {
-                return b;
-            }
-        }
     }
 
     /**

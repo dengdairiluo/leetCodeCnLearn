@@ -10,6 +10,11 @@ import java.util.Arrays;
  * @date 2022-08-14 23:57
  */
 public class Q931 {
+    /**
+     * 备忘录，防止重复计算
+     */
+    int[][] memo;
+
     public int minFallingPathSum(int[][] matrix) {
         int n = matrix.length;
         int res = Integer.MAX_VALUE;
@@ -24,11 +29,6 @@ public class Q931 {
         }
         return res;
     }
-
-    /**
-     * 备忘录，防止重复计算
-     */
-    int[][] memo;
 
     // 递归函数 dp 从第一行（matrix[0][..]）向下落，落到位置 matrix[i][j] 的最小路径和为 dp(matrix, i, j)
     public int dp(int[][] matrix, int i, int j) {

@@ -10,14 +10,12 @@ import java.util.concurrent.Semaphore;
  * @date 2022-10-30 22:56
  */
 public class Q1115 {
+    Semaphore foo = new Semaphore(1);
+    Semaphore bar = new Semaphore(0);
     private int n;
-
     public Q1115(int n) {
         this.n = n;
     }
-
-    Semaphore foo = new Semaphore(1);
-    Semaphore bar = new Semaphore(0);
 
     public void foo(Runnable printFoo) throws InterruptedException {
         for (int i = 0; i < n; i++) {

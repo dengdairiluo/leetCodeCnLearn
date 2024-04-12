@@ -17,8 +17,8 @@ public class Q1427 {
                 move += operation[1];
             }
         }
-        while (move>0){
-            move-=s.length();
+        while (move > 0) {
+            move -= s.length();
         }
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {

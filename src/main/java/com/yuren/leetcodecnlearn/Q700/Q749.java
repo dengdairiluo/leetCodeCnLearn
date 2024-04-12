@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.Set;
 
 public class Q749 {
+    int[] dr = new int[]{-1, 1, 0, 0};
+    int[] dc = new int[]{0, 0, -1, 1};
     private Set<Integer> seen;
     private List<Set<Integer>> regions;
     private List<Set<Integer>> frontiers;
     private List<Integer> perimeters;
     private int[][] grid;
     private int r, c;
-    int[] dr = new int[]{-1, 1, 0, 0};
-    int[] dc = new int[]{0, 0, -1, 1};
 
     public int containVirus(int[][] grid) {
         this.grid = grid;

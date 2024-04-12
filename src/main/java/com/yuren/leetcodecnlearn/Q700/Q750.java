@@ -34,7 +34,7 @@ public class Q750 {
                     if (r2 <= r && rows.get(r2).size() >= sqrtN)
                         continue;
                     int found = 0;
-                    for (int c2: rows.get(r2))
+                    for (int c2 : rows.get(r2))
                         if (target.contains(c2))
                             found++;
                     ans += found * (found - 1) / 2;
@@ -44,9 +44,9 @@ public class Q750 {
                     int c1 = rows.get(r).get(i1);
                     for (int i2 = i1 + 1; i2 < rows.get(r).size(); ++i2) {
                         int c2 = rows.get(r).get(i2);
-                        int ct = count.getOrDefault(200*c1 + c2, 0);
+                        int ct = count.getOrDefault(200 * c1 + c2, 0);
                         ans += ct;
-                        count.put(200*c1 + c2, ct + 1);
+                        count.put(200 * c1 + c2, ct + 1);
                     }
                 }
             }

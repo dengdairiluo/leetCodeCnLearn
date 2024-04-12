@@ -9,14 +9,10 @@ package com.yuren.leetcodecnlearn.Q1500;
  */
 public class Q1568 {
 
-    private int row, col;
-
-    private int[][] mat, ids;
-
     private final int[] dx = new int[]{-1, 0, 1, 0};
-
     private final int[] dy = new int[]{0, 1, 0, -1};
-
+    private int row, col;
+    private int[][] mat, ids;
     private int[] fa, dfn, low;
 
     private int t;

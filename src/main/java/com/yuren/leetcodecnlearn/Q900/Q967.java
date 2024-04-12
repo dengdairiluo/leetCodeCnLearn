@@ -11,9 +11,8 @@ import java.util.List;
  * @date 2022-08-30 00:00
  */
 public class Q967 {
-    private List<Integer> ans;
-
     int n, k;
+    private List<Integer> ans;
 
     public int[] numsSameConsecDiff(int n, int k) {
         ans = new ArrayList<>();

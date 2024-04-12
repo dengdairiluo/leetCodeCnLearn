@@ -8,6 +8,15 @@ package com.yuren.leetcodecnlearn.Q1800;
  * @date 2023-08-06 21:32
  */
 public class Q1819 {
+    private static int gcd(int x, int y) {
+        while (x != 0) {
+            int tmp = x;
+            x = y % x;
+            y = tmp;
+        }
+        return y;
+    }
+
     public int countDifferentSubsequenceGCDs(int[] nums) {
         int max = 0;
         int ans = 0;
@@ -32,14 +41,5 @@ public class Q1819 {
                 ans++;
         }
         return ans;
-    }
-
-    private static int gcd(int x, int y) {
-        while (x != 0) {
-            int tmp = x;
-            x = y % x;
-            y = tmp;
-        }
-        return y;
     }
 }

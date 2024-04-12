@@ -12,16 +12,6 @@ import java.util.Map;
  * @date 2023-08-17 23:40
  */
 public class Q1858 {
-    private static class Node {
-        Map<Character, Node> children;
-        boolean isEnd;
-
-        Node() {
-            children = new HashMap<>();
-            isEnd = false;
-        }
-    }
-
     public String longestWord(String[] words) {
         if (words.length == 1) return words[0];
         Arrays.sort(words, (a, b) -> {
@@ -50,5 +40,15 @@ public class Q1858 {
             }
         }
         return res;
+    }
+
+    private static class Node {
+        Map<Character, Node> children;
+        boolean isEnd;
+
+        Node() {
+            children = new HashMap<>();
+            isEnd = false;
+        }
     }
 }

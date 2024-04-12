@@ -34,7 +34,7 @@ public class Q2333 {
                 //对这个数量的最大值减一操作
                 knum -= diff[i];
                 max--;
-            //若大于操作数
+                //若大于操作数
             } else {
                 //操作knum个最大值
                 diff[i] -= knum;

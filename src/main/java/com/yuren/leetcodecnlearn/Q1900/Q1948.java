@@ -10,15 +10,6 @@ import java.util.*;
  * @date 2023-09-23 23:46
  */
 public class Q1948 {
-    static class Folder {
-        private String serialStr;
-        private Map<String, Folder> children = new HashMap<>();
-
-        public Folder() {
-
-        }
-    }
-
     private Folder root = new Folder();
     private Map<String, Integer> removeMap = new HashMap<>();
 
@@ -64,6 +55,15 @@ public class Q1948 {
             temp.add(entry.getKey());
             this.generateAnswersRecursively(list, temp, entry.getValue());
             temp.remove(temp.size() - 1);
+        }
+    }
+
+    static class Folder {
+        private String serialStr;
+        private Map<String, Folder> children = new HashMap<>();
+
+        public Folder() {
+
         }
     }
 }

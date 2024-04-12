@@ -8,41 +8,6 @@ package com.yuren.leetcodecnlearn.Q1800;
  * @date 2023-08-15 23:34
  */
 public class Q1851 {
-    public int[] minInterval(int[][] intervals, int[] queries) {
-        int[] iLen = new int[intervals.length];
-        for (int i = 0; i < iLen.length; i++) {
-            iLen[i] = intervals[i][1] - intervals[i][0] + 1;
-        }
-
-        int[] iSort = new int[intervals.length];
-        for (int i = 0; i < iSort.length; i++) iSort[i] = i;
-        quicksort(iSort, intervals, 0, iSort.length - 1);
-
-        int[] ansSort = new int[queries.length];
-        for (int i = 0; i < ansSort.length; i++) ansSort[i] = i;
-        quicksort(ansSort, queries, 0, ansSort.length - 1);
-
-        int addTail = 0;
-        int[] ans = new int[queries.length];
-        int[] queue = new int[intervals.length + 1];
-
-        for (int i = 0; i < ansSort.length; i++) {
-            int querie = queries[ansSort[i]];
-            while (addTail < intervals.length && intervals[iSort[addTail]][0] <= querie) {
-                if (intervals[iSort[addTail]][1] >= querie) {
-                    heapOffer(queue, iLen, iSort[addTail]);
-                }
-                addTail++;
-            }
-            while (queue[0] > 0 && intervals[queue[1]][1] < querie) {
-                heapPoll(queue, iLen);
-            }
-            ans[ansSort[i]] = queue[0] > 0 ? iLen[queue[1]] : -1;
-        }
-
-        return ans;
-    }
-
     static void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
@@ -110,5 +75,40 @@ public class Q1851 {
         }
         quicksort(list, item, left, tail);
         quicksort(list, item, tail + 1, right);
+    }
+
+    public int[] minInterval(int[][] intervals, int[] queries) {
+        int[] iLen = new int[intervals.length];
+        for (int i = 0; i < iLen.length; i++) {
+            iLen[i] = intervals[i][1] - intervals[i][0] + 1;
+        }
+
+        int[] iSort = new int[intervals.length];
+        for (int i = 0; i < iSort.length; i++) iSort[i] = i;
+        quicksort(iSort, intervals, 0, iSort.length - 1);
+
+        int[] ansSort = new int[queries.length];
+        for (int i = 0; i < ansSort.length; i++) ansSort[i] = i;
+        quicksort(ansSort, queries, 0, ansSort.length - 1);
+
+        int addTail = 0;
+        int[] ans = new int[queries.length];
+        int[] queue = new int[intervals.length + 1];
+
+        for (int i = 0; i < ansSort.length; i++) {
+            int querie = queries[ansSort[i]];
+            while (addTail < intervals.length && intervals[iSort[addTail]][0] <= querie) {
+                if (intervals[iSort[addTail]][1] >= querie) {
+                    heapOffer(queue, iLen, iSort[addTail]);
+                }
+                addTail++;
+            }
+            while (queue[0] > 0 && intervals[queue[1]][1] < querie) {
+                heapPoll(queue, iLen);
+            }
+            ans[ansSort[i]] = queue[0] > 0 ? iLen[queue[1]] : -1;
+        }
+
+        return ans;
     }
 }

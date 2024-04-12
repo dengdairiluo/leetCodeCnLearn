@@ -19,10 +19,10 @@ public class Q1271 {
             // 如果余数是0
             if (modValue == 0) {
                 result.append('O');
-            // 如果余数是1
+                // 如果余数是1
             } else if (modValue == 1) {
                 result.append('I');
-            // 如果余数大于10，从“A” 开始
+                // 如果余数大于10，从“A” 开始
             } else if (modValue >= 10) {
                 result.append((char) ('A' + modValue - 10));
             } else {

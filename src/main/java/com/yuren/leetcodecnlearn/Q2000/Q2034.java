@@ -11,10 +11,10 @@ import java.util.HashMap;
  * @date 2023-11-05 22:54
  */
 public class Q2034 {
-    HashMap<Integer, Integer> map;
     static final int len = 65536 * 2;
     static int[] max = new int[len * 2 + 4];
     static int[] min = new int[len * 2 + 4];
+    HashMap<Integer, Integer> map;
     int index, head, end;
     int newtime, newprice;
 

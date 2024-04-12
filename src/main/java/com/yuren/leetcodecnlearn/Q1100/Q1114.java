@@ -9,9 +9,9 @@ package com.yuren.leetcodecnlearn.Q1100;
  */
 public class Q1114 {
 
+    private final Object lock = new Object();
     private boolean firstFinished;
     private boolean secondFinished;
-    private final Object lock = new Object();
 
     public Q1114() {
 

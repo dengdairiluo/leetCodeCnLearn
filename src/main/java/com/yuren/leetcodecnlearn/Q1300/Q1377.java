@@ -11,10 +11,8 @@ import java.util.Arrays;
  */
 public class Q1377 {
 
-    static final int N = 110, M = N * 2;
-    static int[] h = new int[N], ne = new int[M], e = new int[M], q = new int[N];
-    boolean[] vis = new boolean[N];
-    double[] rate = new double[N];
+    boolean[] vis = new boolean[N];    static final int N = 110, M = N * 2;
+    double[] rate = new double[N];    static int[] h = new int[N], ne = new int[M], e = new int[M], q = new int[N];
     int idx, hh, tt = -1;
 
     public void add(int a, int b) {
@@ -77,10 +75,10 @@ public class Q1377 {
                             //刚好经过 t 步
                             if (level == t) {
                                 return rateCur;
-                            //大于 t 步
+                                //大于 t 步
                             } else if (level > t) {
                                 return 0.0;
-                            //小于 t 步就已经到达，验证是否存在孩子节点
+                                //小于 t 步就已经到达，验证是否存在孩子节点
                             } else {
                                 for (int b = h[eg]; b != -1; b = ne[b]) {
                                     if (!vis[e[b]]) {
@@ -97,4 +95,8 @@ public class Q1377 {
 
         return rate[target];
     }
+
+
+
+
 }

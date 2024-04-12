@@ -1,6 +1,9 @@
 package com.yuren.leetcodecnlearn.Q1700;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created with Intellij IDEA.

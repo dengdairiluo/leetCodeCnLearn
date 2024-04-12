@@ -13,25 +13,6 @@ import java.util.PriorityQueue;
  * @date 2022-07-13 22:59
  */
 public class Q857 {
-    private static class Node implements Comparable<Node> {
-        int quality, wage;
-        double val;
-
-        Node(int quality, int wage) {
-            this.quality = quality;
-            this.wage = wage;
-            this.val = 1.0 * wage / quality;
-        }
-
-        @Override
-        public int compareTo(Node o) {
-            if (this.val < o.val) {
-                return 1;
-            }
-            return -1;
-        }
-    }
-
     public double minCostToHireWorkers(int[] quality, int[] wage, int K) {
 
         //预处理，按工资/质量排序，从大到小
@@ -59,5 +40,24 @@ public class Q857 {
             ans = Math.min(ans, sum * list.get(i).val);
         }
         return ans;
+    }
+
+    private static class Node implements Comparable<Node> {
+        int quality, wage;
+        double val;
+
+        Node(int quality, int wage) {
+            this.quality = quality;
+            this.wage = wage;
+            this.val = 1.0 * wage / quality;
+        }
+
+        @Override
+        public int compareTo(Node o) {
+            if (this.val < o.val) {
+                return 1;
+            }
+            return -1;
+        }
     }
 }

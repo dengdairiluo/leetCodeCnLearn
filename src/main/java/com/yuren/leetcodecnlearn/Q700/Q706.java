@@ -8,17 +8,6 @@ package com.yuren.leetcodecnlearn.Q700;
  * @date 2022-05-08 13:39
  */
 public class Q706 {
-    private static class Node {
-        int key, value;
-        Node next;
-        boolean isDeleted;
-
-        Node(int _key, int _value) {
-            key = _key;
-            value = _value;
-        }
-    }
-
     // 冲突时的偏移量
     int OFFSET = 1;
     Node[] nodes = new Node[10009];
@@ -58,5 +47,16 @@ public class Q706 {
             idx = hash % n;
         }
         return idx;
+    }
+
+    private static class Node {
+        int key, value;
+        Node next;
+        boolean isDeleted;
+
+        Node(int _key, int _value) {
+            key = _key;
+            value = _value;
+        }
     }
 }

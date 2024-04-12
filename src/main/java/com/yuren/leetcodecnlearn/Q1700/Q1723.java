@@ -10,6 +10,8 @@ import java.util.Arrays;
  * @date 2023-06-26 06:58
  */
 public class Q1723 {
+    int[] bucket;
+
     public int minimumTimeRequired(int[] jobs, int k) {
         bucket = new int[k];
         Arrays.sort(jobs);
@@ -37,9 +39,6 @@ public class Q1723 {
         }
         return l;
     }
-
-
-    int[] bucket;
 
     private boolean dfs(int[] jobs, int k, int target, int index) {
         if (index == jobs.length) {

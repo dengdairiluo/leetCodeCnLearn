@@ -11,6 +11,10 @@ import java.util.Queue;
  * @date 2023-06-29 22:56
  */
 public class Q1730 {
+    private static boolean validateInputParams(int m, int n) {
+        return m > 200 || m < 1 || n > 200 || n < 1;
+    }
+
     public int getFood(char[][] grid) {
         int m = grid.length, n = grid[0].length;
         // 非法参数校验
@@ -88,10 +92,6 @@ public class Q1730 {
             }
         }
         return -1;
-    }
-
-    private static boolean validateInputParams(int m, int n) {
-        return m > 200 || m < 1 || n > 200 || n < 1;
     }
 
     static class Point {

@@ -17,6 +17,37 @@ public class Q1792 {
      */
     private int size;
 
+    /**
+     * 二分查找，将 e.total 设置为使得 e.compareTo(c) > 0 的最小值（如果 extraStudents 不够用，使 e.total += extraStudents）
+     *
+     * @param e             待补充学生的班级
+     * @param c             下个待补充学生的班级
+     * @param extraStudents 额外的学生（消耗品）
+     * @return 消耗后剩余的 extraStudents
+     */
+    private static int binarySearch(ClassInfo e, ClassInfo c, int extraStudents) {
+        int old = e.total;
+        for (int l = e.total + 1, r = e.total + extraStudents; ; ) {
+            e.total = l + r >>> 1;
+            e.updateFactor();
+            if (e.compareTo(c) > 0) {
+                if (e.total == l) {
+                    break;
+                }
+
+                r = e.total;
+            } else {
+                if (l >= r - 1) {
+                    e.total = r;
+                    break;
+                }
+
+                l = e.total + 1;
+            }
+        }
+        return extraStudents - e.total + old;
+    }
+
     public double maxAverageRatio(int[][] classes, int extraStudents) {
         // 将通过率低于100%的班级堆积在数组前端
         size = classes.length;
@@ -97,37 +128,6 @@ public class Q1792 {
             QUEUE[i] = c;
         }
         QUEUE[i] = e;
-    }
-
-    /**
-     * 二分查找，将 e.total 设置为使得 e.compareTo(c) > 0 的最小值（如果 extraStudents 不够用，使 e.total += extraStudents）
-     *
-     * @param e             待补充学生的班级
-     * @param c             下个待补充学生的班级
-     * @param extraStudents 额外的学生（消耗品）
-     * @return 消耗后剩余的 extraStudents
-     */
-    private static int binarySearch(ClassInfo e, ClassInfo c, int extraStudents) {
-        int old = e.total;
-        for (int l = e.total + 1, r = e.total + extraStudents; ; ) {
-            e.total = l + r >>> 1;
-            e.updateFactor();
-            if (e.compareTo(c) > 0) {
-                if (e.total == l) {
-                    break;
-                }
-
-                r = e.total;
-            } else {
-                if (l >= r - 1) {
-                    e.total = r;
-                    break;
-                }
-
-                l = e.total + 1;
-            }
-        }
-        return extraStudents - e.total + old;
     }
 
     /**

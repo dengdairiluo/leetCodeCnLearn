@@ -1,7 +1,6 @@
 package com.yuren.leetcodecnlearn.Q2300;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.IntStream;
 
 /**

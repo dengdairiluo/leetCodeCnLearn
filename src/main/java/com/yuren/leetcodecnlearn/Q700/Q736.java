@@ -14,12 +14,14 @@ public class Q736 {
     char[] ex;
     int len;
     int index;
+
     public int evaluate(String expression) {
         ex = expression.toCharArray();
         len = ex.length;
         index = 1;
         return process(new HashMap<>());
     }
+
     public int process(Map<String, Integer> map) {
         if (ex[index] == 'l') {
             index += 4;
@@ -32,6 +34,7 @@ public class Q736 {
             return mult(map);
         }
     }
+
     public void updateMap(Map<String, Integer> map, Map<String, Integer> map1) {
         for (String s : map1.keySet()) {
             if (!map.containsKey(s)) {
@@ -39,6 +42,7 @@ public class Q736 {
             }
         }
     }
+
     public int let(Map<String, Integer> map1) {
         String variate = "";
         int cur = 0;
@@ -79,6 +83,7 @@ public class Q736 {
         }
         return 0;
     }
+
     public int add(Map<String, Integer> map) {
         int xVal = 0;
         int yVal = 0;
@@ -115,6 +120,7 @@ public class Q736 {
         }
         return 0;
     }
+
     public int mult(Map<String, Integer> map) {
         int xVal = 0;
         int yVal = 0;
@@ -151,6 +157,7 @@ public class Q736 {
         }
         return 0;
     }
+
     public String getVariate() {
         StringBuilder sb = new StringBuilder();
         while (index < len && (isDigit(ex[index]) || isLower(ex[index]))) {
@@ -158,6 +165,7 @@ public class Q736 {
         }
         return sb.toString();
     }
+
     public int getNum() {
         boolean isNeg = false;
         int ans = 0;
@@ -170,9 +178,11 @@ public class Q736 {
         }
         return isNeg ? -ans : ans;
     }
+
     public boolean isLower(char c) {
         return c >= 'a' && c <= 'z';
     }
+
     public boolean isDigit(char c) {
         return c >= '0' && c <= '9';
     }

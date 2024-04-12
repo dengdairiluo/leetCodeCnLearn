@@ -8,17 +8,6 @@ package com.yuren.leetcodecnlearn.Q1100;
  * @date 2022-11-08 23:35
  */
 public class Q1136 {
-    private static class Dept {
-        int classId;
-        Dept next;
-
-        Dept(int classId, Dept next) {
-            this.classId = classId;
-            this.next = next;
-        }
-
-    }
-
     public int minimumSemesters(int n, int[][] rels) {
         int[] refs = new int[n + 1];
         Dept[] depts = new Dept[n + 1];
@@ -54,5 +43,16 @@ public class Q1136 {
             }
         }
         return -1;
+    }
+
+    private static class Dept {
+        int classId;
+        Dept next;
+
+        Dept(int classId, Dept next) {
+            this.classId = classId;
+            this.next = next;
+        }
+
     }
 }

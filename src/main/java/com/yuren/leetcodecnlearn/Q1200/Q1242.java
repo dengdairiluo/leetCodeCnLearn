@@ -16,8 +16,8 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Q1242 {
     public final int THREAD_NUM = 30;
-    private Map<String, String> accessedUrl = new ConcurrentHashMap<>();
     public volatile int threadsNum;
+    private Map<String, String> accessedUrl = new ConcurrentHashMap<>();
     private volatile List<String> toAccessUrlList = new LinkedList<>();
     private List<String> res = new ArrayList<>();
     private String startUrlHostName = "";
@@ -25,6 +25,18 @@ public class Q1242 {
     private Condition notEmptyCondition = taskLock.newCondition();
     private Semaphore taskConcurrency = null;
     private HtmlParser htmlParser;
+
+    public Q1242(int threadsNum, HtmlParser htmlParser, String startUrl) {
+        this.threadsNum = threadsNum;
+        this.taskConcurrency = new Semaphore(threadsNum);
+        this.htmlParser = htmlParser;
+        this.startUrlHostName = parseHostname(startUrl);
+        this.addUrl(startUrl);
+
+    }
+
+    public Q1242() {
+    }
 
     public boolean duplicatedUrl(String url) {
         boolean duplicated = this.accessedUrl.containsKey(url);
@@ -97,19 +109,6 @@ public class Q1242 {
     public boolean sameHostNameAsStartUrl(String url) {
         return this.startUrlHostName.equals(parseHostname(url));
     }
-
-    public Q1242(int threadsNum, HtmlParser htmlParser, String startUrl) {
-        this.threadsNum = threadsNum;
-        this.taskConcurrency = new Semaphore(threadsNum);
-        this.htmlParser = htmlParser;
-        this.startUrlHostName = parseHostname(startUrl);
-        this.addUrl(startUrl);
-
-    }
-
-    public Q1242() {
-    }
-
 
     private String parseHostname(String url) {
         int indexOfPathStart = url.indexOf('/', 7);

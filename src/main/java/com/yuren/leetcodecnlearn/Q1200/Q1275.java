@@ -32,7 +32,7 @@ public class Q1275 {
             // 满3个棋子则胜利
             if (count[moves[i][0]] == 3 || count[moves[i][1] + 3] == 3 ||
                     count[6] == 3 || count[7] == 3)
-                // A先B后 则总长度为偶时 最后为B 反之为A
+            // A先B后 则总长度为偶时 最后为B 反之为A
             {
                 return m % 2 == 0 ? "B" : "A";
             }

@@ -24,7 +24,7 @@ public class Q776 {
         }
     }
 
-     class TreeNode {
+    class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

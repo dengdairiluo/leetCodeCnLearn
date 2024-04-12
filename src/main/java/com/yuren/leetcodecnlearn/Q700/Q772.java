@@ -43,11 +43,11 @@ public class Q772 {
     }
 
     public int calculate(String s) {
-        int[] result = js(s,0);
+        int[] result = js(s, 0);
         return result[0];
     }
 
-    public int[] js(String s,int begin) {
+    public int[] js(String s, int begin) {
         Deque<Integer> deque = new LinkedList<>();
         int[] result = new int[2];
         char presign = '+';
@@ -59,17 +59,25 @@ public class Q772 {
                 num = num * 10 + c - '0';
             }
             if (c == '(') {
-                int[] numNext = js(s,i + 1);
+                int[] numNext = js(s, i + 1);
                 num = numNext[0];
                 i = numNext[1];
             }
             //对于末尾结束时 或 不是数字字符且字符不为'('时，对num进行处理
             if (i == n - 1 || !Character.isDigit(c) && c != '(') {
                 switch (presign) {
-                    case '+':deque.push(num);break;
-                    case '-':deque.push(-num);break;
-                    case '*':deque.push(deque.pop() * num);break;
-                    default:deque.push(deque.pop() / num);break;
+                    case '+':
+                        deque.push(num);
+                        break;
+                    case '-':
+                        deque.push(-num);
+                        break;
+                    case '*':
+                        deque.push(deque.pop() * num);
+                        break;
+                    default:
+                        deque.push(deque.pop() / num);
+                        break;
                 }
                 //如果结束是右括号，那么就记录位置结束循环。
                 if (c == ')') {

@@ -11,19 +11,6 @@ import java.util.Deque;
  * @date 2022-07-16 10:13
  */
 public class Q864 {
-    private static class Node {
-        int x, y;
-        int len;
-        int key;
-
-        Node(int x, int y, int key, int len) {
-            this.x = x;
-            this.y = y;
-            this.key = key;
-            this.len = len;
-        }
-    }
-
     public int shortestPathAllKeys(String[] grid) {
         int row = grid.length;
         int col = grid[0].length();
@@ -100,5 +87,18 @@ public class Q864 {
             return false;
         }
         return true;
+    }
+
+    private static class Node {
+        int x, y;
+        int len;
+        int key;
+
+        Node(int x, int y, int key, int len) {
+            this.x = x;
+            this.y = y;
+            this.key = key;
+            this.len = len;
+        }
     }
 }

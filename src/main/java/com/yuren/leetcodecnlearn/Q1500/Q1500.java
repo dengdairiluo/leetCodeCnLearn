@@ -11,15 +11,11 @@ import java.util.*;
  */
 public class Q1500 {
 
-    private int m;
-
-    private int id = 1;
-
     private final Map<Integer, List<Integer>> users;
-
     private final PriorityQueue<Integer> gcQueue;
-
     private final Set<Integer>[] blocks;
+    private int m;
+    private int id = 1;
 
     public Q1500(int m) {
         this.m = m;

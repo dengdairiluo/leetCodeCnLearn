@@ -47,9 +47,9 @@ public class Q843 {
         return match;
     }
 
-    private static class  Master {
-      public int guess(String word) {
-          return 0;
-      }
-  }
+    private static class Master {
+        public int guess(String word) {
+            return 0;
+        }
+    }
 }

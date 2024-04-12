@@ -15,6 +15,11 @@ public class Q1601 {
     int[][] req;
     Integer[] dp;
     int reqLen;
+    /*
+     * tempMask helps update the mask to reflect all edges used up in the cycle
+     */
+    int tempMask;
+    int currentCycleSize;
 
     public int maximumRequests(int n, int[][] requests) {
         int uselessRequests = 0;
@@ -77,12 +82,6 @@ public class Q1601 {
         dp[mask] = resuslt;
         return resuslt;
     }
-
-    /*
-     * tempMask helps update the mask to reflect all edges used up in the cycle
-     */
-    int tempMask;
-    int currentCycleSize;
 
     int getCycleLength(int[] edge, int msk) {
         tempMask = msk;

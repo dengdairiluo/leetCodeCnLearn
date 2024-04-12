@@ -34,6 +34,7 @@ public class Q1066 {
     }
 
     private static class KmAlgo {
+        private static final int INF = Integer.MAX_VALUE;
         private final int n;
         // 左集合对应的匹配点
         private final int[] matchX;
@@ -50,7 +51,6 @@ public class Q1066 {
         private final int[] ly;
         private final int[][] graph;
         private final int[] slack;
-        private static final int INF = Integer.MAX_VALUE;
         private final Queue<Integer> queue;
 
         public KmAlgo(int n, int[][] graph) {

@@ -19,7 +19,7 @@ public class Q1691 {
         int[] f = new int[n];
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < i; ++j)
-                // 排序后，cuboids[j][0] <= cuboids[i][0] 恒成立
+            // 排序后，cuboids[j][0] <= cuboids[i][0] 恒成立
             {
                 if (cuboids[j][1] <= cuboids[i][1] && cuboids[j][2] <= cuboids[i][2]) {
                     // cuboids[j] 可以堆在 cuboids[i] 上

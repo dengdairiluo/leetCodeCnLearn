@@ -8,8 +8,8 @@ package com.yuren.leetcodecnlearn.Q1200;
  * @date 2022-12-11 22:37
  */
 public class Q1210 {
-    public final int MAX_VALUE_OUT_OF_BOUND = 10000;
     private static final int STATE_VER = 0, STATE_HOR = 1;
+    public final int MAX_VALUE_OUT_OF_BOUND = 10000;
     public final int MOVE_RIGHT = 0, MOVE_DOWN = 1, MOVE_ROTATE_RIGHT = 2, MOVE_ROTATE_DOWN = 3;
     private final int[] DIR = {MOVE_RIGHT, MOVE_DOWN, MOVE_ROTATE_RIGHT, MOVE_ROTATE_DOWN};
     int result = MAX_VALUE_OUT_OF_BOUND;

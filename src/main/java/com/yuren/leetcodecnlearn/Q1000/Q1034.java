@@ -8,9 +8,9 @@ package com.yuren.leetcodecnlearn.Q1000;
  * @date 2022-09-26 23:45
  */
 public class Q1034 {
+    private final int[][] dirs = new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
     private int m, n, c;
     private int[][] grid, ans;
-    private final int[][] dirs = new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     public int[][] colorBorder(int[][] grid, int row, int col, int color) {
         this.grid = grid;

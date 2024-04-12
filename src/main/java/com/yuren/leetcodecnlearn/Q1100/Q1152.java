@@ -10,47 +10,6 @@ import java.util.*;
  * @date 2022-11-15 23:47
  */
 public class Q1152 {
-    private static class Visit {
-        String user;
-        int time;
-        String web;
-
-        public Visit(String user, int time, String web) {
-            this.user = user;
-            this.time = time;
-            this.web = web;
-        }
-    }
-
-    private static class IPattern {
-        String w1;
-        String w2;
-        String w3;
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) {
-                return true;
-            }
-            if (o == null || getClass() != o.getClass()) {
-                return false;
-            }
-            IPattern iPattern = (IPattern) o;
-            return Objects.equals(w1, iPattern.w1) && Objects.equals(w2, iPattern.w2) && Objects.equals(w3, iPattern.w3);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(w1, w2, w3);
-        }
-
-        public IPattern(String w1, String w2, String w3) {
-            this.w1 = w1;
-            this.w2 = w2;
-            this.w3 = w3;
-        }
-    }
-
     public List<String> mostVisitedPattern(String[] username, int[] timestamp, String[] website) {
         Set<Visit> set = new HashSet<>();
         for (int i = 0; i < username.length; i++) {
@@ -119,6 +78,47 @@ public class Q1152 {
         for (int i = t; i < temp.length; i++) {
             template[level] = temp[i];
             dfs(temp, i + 1, map1, template, level + 1, key);
+        }
+    }
+
+    private static class Visit {
+        String user;
+        int time;
+        String web;
+
+        public Visit(String user, int time, String web) {
+            this.user = user;
+            this.time = time;
+            this.web = web;
+        }
+    }
+
+    private static class IPattern {
+        String w1;
+        String w2;
+        String w3;
+
+        public IPattern(String w1, String w2, String w3) {
+            this.w1 = w1;
+            this.w2 = w2;
+            this.w3 = w3;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+            IPattern iPattern = (IPattern) o;
+            return Objects.equals(w1, iPattern.w1) && Objects.equals(w2, iPattern.w2) && Objects.equals(w3, iPattern.w3);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(w1, w2, w3);
         }
     }
 }

@@ -11,27 +11,6 @@ import java.util.Queue;
  * @date 2023-09-14 23:39
  */
 public class Q1926 {
-    private static class Point {
-        /**
-         * 横坐标
-         */
-        int x;
-        /**
-         * 纵坐标
-         */
-        int y;
-        /**
-         * 步数
-         */
-        int step;
-
-        public Point(int x, int y, int step) {
-            this.x = x;
-            this.y = y;
-            this.step = step;
-        }
-    }
-
     public int nearestExit(char[][] maze, int[] entrance) {
         return bfs(maze, entrance[0], entrance[1]);
     }
@@ -67,5 +46,26 @@ public class Q1926 {
         }
         //程序运行到这里，说明不存在这样的路径，返回 -1
         return -1;
+    }
+
+    private static class Point {
+        /**
+         * 横坐标
+         */
+        int x;
+        /**
+         * 纵坐标
+         */
+        int y;
+        /**
+         * 步数
+         */
+        int step;
+
+        public Point(int x, int y, int step) {
+            this.x = x;
+            this.y = y;
+            this.step = step;
+        }
     }
 }

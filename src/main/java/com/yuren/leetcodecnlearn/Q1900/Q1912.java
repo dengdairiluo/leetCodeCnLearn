@@ -10,6 +10,89 @@ import java.util.*;
  * @date 2023-09-08 23:30
  */
 public class Q1912 {
+    static final int TOP_SIZE = 5;
+    static Comparator<ShopMovie> MOVIE_COMPARATOR = (o1, o2) -> {
+        if (o1.price != o2.price) {
+            return o1.price < o2.price ? -1 : 1;
+        }
+        if (o1.shopId != o2.shopId) {
+            return o1.shopId < o2.shopId ? -1 : 1;
+        }
+        return Integer.compare(o1.movieId, o2.movieId);
+    };
+    private final Map<Integer, TopQueue<ShopMovie>> movieIdToTopQueue;
+    private final Map<ShopMovieKey, ShopMovie> keyToShopMovie;
+    private final TopQueue<ShopMovie> rentedTopQueue;
+
+    public Q1912(int n, int[][] entries) {
+
+        movieIdToTopQueue = new HashMap<>();
+
+        keyToShopMovie = new HashMap<>();
+
+        for (int[] entry : entries) {
+            int shopId = entry[0];
+            int movieId = entry[1];
+            int price = entry[2];
+            ShopMovie shopMovie = new ShopMovie(shopId, movieId, price);
+            TopQueue<ShopMovie> topQueue = movieIdToTopQueue.computeIfAbsent(movieId, (k) -> new TopQueue<>(TOP_SIZE, MOVIE_COMPARATOR));
+            topQueue.add(shopMovie);
+
+            keyToShopMovie.put(new ShopMovieKey(shopId, movieId), shopMovie);
+        }
+
+        rentedTopQueue = new TopQueue<>(TOP_SIZE, MOVIE_COMPARATOR);
+    }
+
+    public List<Integer> search(int movieId) {
+
+        TopQueue<ShopMovie> topQueue = movieIdToTopQueue.get(movieId);
+
+        if (topQueue == null) {
+            return new ArrayList<>();
+        }
+
+        List<Integer> shopIdList = new ArrayList<>(topQueue.list.size());
+        for (ShopMovie shopMovie : topQueue.list) {
+            shopIdList.add(shopMovie.shopId);
+        }
+
+        return shopIdList;
+    }
+
+    public void rent(int shopId, int movieId) {
+
+        ShopMovie shopMovie = keyToShopMovie.get(new ShopMovieKey(shopId, movieId));
+
+        TopQueue<ShopMovie> unRentedTopQueue = movieIdToTopQueue.get(movieId);
+        unRentedTopQueue.remove(shopMovie);
+
+        rentedTopQueue.add(shopMovie);
+    }
+
+    public void drop(int shopId, int movieId) {
+
+        ShopMovie shopMovie = keyToShopMovie.get(new ShopMovieKey(shopId, movieId));
+
+        rentedTopQueue.remove(shopMovie);
+
+        TopQueue<ShopMovie> unRentedTopQueue = movieIdToTopQueue.get(movieId);
+        unRentedTopQueue.add(shopMovie);
+    }
+
+    public List<List<Integer>> report() {
+
+        List<List<Integer>> shopMovieList = new ArrayList<>(rentedTopQueue.list.size());
+        for (ShopMovie shopMovie : rentedTopQueue.list) {
+            List<Integer> pair = new ArrayList<>(2);
+            pair.add(shopMovie.shopId);
+            pair.add(shopMovie.movieId);
+            shopMovieList.add(pair);
+        }
+
+        return shopMovieList;
+    }
+
     static class TopQueue<T> {
 
         private int k;
@@ -116,92 +199,5 @@ public class Q1912 {
             this.movieId = movieId;
             this.price = price;
         }
-    }
-
-    static final int TOP_SIZE = 5;
-
-    static Comparator<ShopMovie> MOVIE_COMPARATOR = (o1, o2) -> {
-        if (o1.price != o2.price) {
-            return o1.price < o2.price ? -1 : 1;
-        }
-        if (o1.shopId != o2.shopId) {
-            return o1.shopId < o2.shopId ? -1 : 1;
-        }
-        return Integer.compare(o1.movieId, o2.movieId);
-    };
-
-    private final Map<Integer, TopQueue<ShopMovie>> movieIdToTopQueue;
-
-    private final Map<ShopMovieKey, ShopMovie> keyToShopMovie;
-
-    private final TopQueue<ShopMovie> rentedTopQueue;
-
-    public Q1912(int n, int[][] entries) {
-
-        movieIdToTopQueue = new HashMap<>();
-
-        keyToShopMovie = new HashMap<>();
-
-        for (int[] entry : entries) {
-            int shopId = entry[0];
-            int movieId = entry[1];
-            int price = entry[2];
-            ShopMovie shopMovie = new ShopMovie(shopId, movieId, price);
-            TopQueue<ShopMovie> topQueue = movieIdToTopQueue.computeIfAbsent(movieId, (k) -> new TopQueue<>(TOP_SIZE, MOVIE_COMPARATOR));
-            topQueue.add(shopMovie);
-
-            keyToShopMovie.put(new ShopMovieKey(shopId, movieId), shopMovie);
-        }
-
-        rentedTopQueue = new TopQueue<>(TOP_SIZE, MOVIE_COMPARATOR);
-    }
-
-    public List<Integer> search(int movieId) {
-
-        TopQueue<ShopMovie> topQueue = movieIdToTopQueue.get(movieId);
-
-        if (topQueue == null) {
-            return new ArrayList<>();
-        }
-
-        List<Integer> shopIdList = new ArrayList<>(topQueue.list.size());
-        for (ShopMovie shopMovie : topQueue.list) {
-            shopIdList.add(shopMovie.shopId);
-        }
-
-        return shopIdList;
-    }
-
-    public void rent(int shopId, int movieId) {
-
-        ShopMovie shopMovie = keyToShopMovie.get(new ShopMovieKey(shopId, movieId));
-
-        TopQueue<ShopMovie> unRentedTopQueue = movieIdToTopQueue.get(movieId);
-        unRentedTopQueue.remove(shopMovie);
-
-        rentedTopQueue.add(shopMovie);
-    }
-
-    public void drop(int shopId, int movieId) {
-
-        ShopMovie shopMovie = keyToShopMovie.get(new ShopMovieKey(shopId, movieId));
-
-        rentedTopQueue.remove(shopMovie);
-
-        TopQueue<ShopMovie> unRentedTopQueue = movieIdToTopQueue.get(movieId);
-        unRentedTopQueue.add(shopMovie);
-    }
-
-    public List<List<Integer>> report() {
-
-        List<List<Integer>> shopMovieList = new ArrayList<>(rentedTopQueue.list.size());
-        for (ShopMovie shopMovie : rentedTopQueue.list) {
-            List<Integer> pair = new ArrayList<>(2);
-            pair.add(shopMovie.shopId);
-            pair.add(shopMovie.movieId);
-            shopMovieList.add(pair);
-        }
-
-        return shopMovieList;
     }
 }

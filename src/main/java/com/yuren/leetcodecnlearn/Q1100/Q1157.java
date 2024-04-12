@@ -26,6 +26,47 @@ public class Q1157 {
 
     }
 
+    private static class CountQuicker {
+        public ArrayList<ArrayList<Integer>> cnt;
+
+        public CountQuicker(int[] arr) {
+            cnt = new ArrayList<>();
+            int max = 0;
+            for (int num : arr) {
+                max = Math.max(max, num);
+            }
+            for (int i = 0; i <= max; i++) {
+                cnt.add(new ArrayList<>());
+            }
+            for (int i = 0; i < arr.length; i++) {
+                cnt.get(arr[i]).add(i);
+            }
+        }
+
+
+        public int realTimes(int left, int right, int num) {
+            ArrayList<Integer> list = cnt.get(num);
+            return size(list, right) - size(list, left - 1);
+        }
+
+        public int size(ArrayList<Integer> list, int index) {
+            int l = 0;
+            int r = list.size() - 1;
+            int mid = 0;
+            int ans = -1;
+            while (l <= r) {
+                mid = (l + r) >> 1;
+                if (list.get(mid) <= index) {
+                    l = mid + 1;
+                    ans = mid;
+                } else {
+                    r = mid - 1;
+                }
+            }
+            return ans + 1;
+        }
+    }
+
     class SegmentTree {
         public int[] candidate;
         public int[] hp;
@@ -91,47 +132,6 @@ public class Q1157 {
                     }
                 }
             }
-        }
-    }
-
-    private static class CountQuicker {
-        public ArrayList<ArrayList<Integer>> cnt;
-
-        public CountQuicker(int[] arr) {
-            cnt = new ArrayList<>();
-            int max = 0;
-            for (int num : arr) {
-                max = Math.max(max, num);
-            }
-            for (int i = 0; i <= max; i++) {
-                cnt.add(new ArrayList<>());
-            }
-            for (int i = 0; i < arr.length; i++) {
-                cnt.get(arr[i]).add(i);
-            }
-        }
-
-
-        public int realTimes(int left, int right, int num) {
-            ArrayList<Integer> list = cnt.get(num);
-            return size(list, right) - size(list, left - 1);
-        }
-
-        public int size(ArrayList<Integer> list, int index) {
-            int l = 0;
-            int r = list.size() - 1;
-            int mid = 0;
-            int ans = -1;
-            while (l <= r) {
-                mid = (l + r) >> 1;
-                if (list.get(mid) <= index) {
-                    l = mid + 1;
-                    ans = mid;
-                } else {
-                    r = mid - 1;
-                }
-            }
-            return ans + 1;
         }
     }
 }

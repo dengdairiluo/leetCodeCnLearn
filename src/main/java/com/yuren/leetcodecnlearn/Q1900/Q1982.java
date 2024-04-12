@@ -45,13 +45,13 @@ public class Q1982 {
         }
 
         if (sFlag) {
-            int[] res = recoverArray(n-1, s);
+            int[] res = recoverArray(n - 1, s);
             System.arraycopy(res, 0, ans, 0, res.length);
-            ans[ans.length-1] = d;
+            ans[ans.length - 1] = d;
         } else {
-            int[] res = recoverArray(n-1, t);
+            int[] res = recoverArray(n - 1, t);
             System.arraycopy(res, 0, ans, 0, res.length);
-            ans[ans.length-1] = -d;
+            ans[ans.length - 1] = -d;
         }
         return ans;
     }

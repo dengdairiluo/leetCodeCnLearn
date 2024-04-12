@@ -10,8 +10,7 @@ import java.util.Arrays;
  * @date 2022-07-02 23:12
  */
 public class Q834 {
-    private static int N = 30010, M = 2 * N;
-    private int idx;
+    private int idx;    private static int N = 30010, M = 2 * N;
     private int[] e = new int[M], he = new int[N], ne = new int[M], d = new int[N], up = new int[N], children = new int[N];
 
     public int[] sumOfDistancesInTree(int n, int[][] edges) {
@@ -63,4 +62,6 @@ public class Q834 {
             dfsU(j, u, n);
         }
     }
+
+
 }

@@ -90,12 +90,12 @@ public class Q675 {
         return found ? dist : -1;
     }
 
-    private static class Point{
+    private static class Point {
         int x;
         int y;
         int height;
 
-        public Point(int x, int y, int height){
+        public Point(int x, int y, int height) {
             this.x = x;
             this.y = y;
             this.height = height;

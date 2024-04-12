@@ -22,7 +22,7 @@ public class Q983 {
                 dp[d] = Math.min(dp[d + 1] + costs[0], dp[d + 7] + costs[1]);
                 dp[d] = Math.min(dp[d], dp[d + 30] + costs[2]);
                 i--; // 别忘了递减一天
-            // 不需要出门
+                // 不需要出门
             } else {
                 dp[d] = dp[d + 1];
             }

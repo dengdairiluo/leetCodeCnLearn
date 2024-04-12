@@ -10,7 +10,7 @@ import java.util.*;
  * @date 2022-07-30 22:04
  */
 public class Q898 {
-    public int subarrayBitwiseORs(int[] arr ) {
+    public int subarrayBitwiseORs(int[] arr) {
         int n = arr.length;
         Set<Integer> set = new HashSet<>(n * 3);
         List<Integer> list = Collections.emptyList();

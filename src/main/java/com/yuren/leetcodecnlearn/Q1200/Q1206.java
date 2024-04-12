@@ -14,8 +14,8 @@ public class Q1206 {
     static final int MAX_LEVEL = 32;
     static final double P_FACTOR = 0.25;
     private final SkipListNode head;
-    private int level;
     private final Random random;
+    private int level;
 
     public Q1206() {
         this.head = new SkipListNode(-1, MAX_LEVEL);

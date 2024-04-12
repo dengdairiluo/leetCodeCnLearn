@@ -9,18 +9,7 @@ package com.yuren.leetcodecnlearn.Q1800;
  */
 public class Q1896 {
 
-    private static class FlipResult {
-        boolean value;
-        int minOp;
-
-        public FlipResult(boolean value, int minOp) {
-            this.value = value;
-            this.minOp = minOp;
-        }
-    }
-
     private int i;
-
     private String expression;
 
     public int minOperationsToFlip(String expression) {
@@ -82,5 +71,15 @@ public class Q1896 {
         }
 
         return left;
+    }
+
+    private static class FlipResult {
+        boolean value;
+        int minOp;
+
+        public FlipResult(boolean value, int minOp) {
+            this.value = value;
+            this.minOp = minOp;
+        }
     }
 }

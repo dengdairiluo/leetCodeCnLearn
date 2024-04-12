@@ -66,15 +66,17 @@ public class Q1810 {
         }
     }
 
-    private static  class GridMaster {
-      boolean canMove(char direction) {
-          return false;
-      }
-      int move(char direction) {
-          return 0;
-      }
-      boolean isTarget() {
-          return false;
-      }
-  }
+    private static class GridMaster {
+        boolean canMove(char direction) {
+            return false;
+        }
+
+        int move(char direction) {
+            return 0;
+        }
+
+        boolean isTarget() {
+            return false;
+        }
+    }
 }

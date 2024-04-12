@@ -8,23 +8,10 @@ package com.yuren.leetcodecnlearn.Q1600;
  * @date 2023-06-08 23:56
  */
 public class Q1670 {
-    private static class Node {
-        int val;
-        Node pre;
-        Node next;
-
-        public Node(int val) {
-            this.val = val;
-            this.pre = null;
-            this.next = null;
-        }
-    }
-
     int size;
     Node head;
     Node tail;
     Node mid;
-
     public Q1670() {
         size = 0;
         head = new Node(0);
@@ -156,5 +143,17 @@ public class Q1670 {
         cur.next = null;
         cur.pre = null;
         return cur.val;
+    }
+
+    private static class Node {
+        int val;
+        Node pre;
+        Node next;
+
+        public Node(int val) {
+            this.val = val;
+            this.pre = null;
+            this.next = null;
+        }
     }
 }

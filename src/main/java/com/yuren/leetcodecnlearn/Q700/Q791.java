@@ -14,7 +14,7 @@ public class Q791 {
         // 'count' represents the current state of characters
         // (with multiplicity) we need to write to our answer.
         int[] count = new int[26];
-        for (char c: t.toCharArray()) {
+        for (char c : t.toCharArray()) {
             count[c - 'a']++;
         }
 
@@ -24,7 +24,7 @@ public class Q791 {
         StringBuilder ans = new StringBuilder();
 
         // Write all characters that occur in S, in the order of S.
-        for (char c: s.toCharArray()) {
+        for (char c : s.toCharArray()) {
             for (int i = 0; i < count[c - 'a']; ++i) {
                 ans.append(c);
             }

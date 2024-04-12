@@ -12,6 +12,46 @@ import java.util.BitSet;
 public class Q1906 {
 
 
+    public int[] minDifference(int[] nums, int[][] queries) {
+
+        // 1 到 100?
+        int n = nums.length;
+        Seg root = Seg.build(0, n - 1, nums);
+
+        int m = queries.length;
+        int[] res = new int[m];
+
+        for (int i = 0; i < m; i++) {
+
+            res[i] = -1;
+            int[] q = queries[i];
+
+            // 获取区间内，包含[1,100]的覆盖值
+            BitSet bs = new BitSet(101);
+            Seg.query(root, q[0], q[1], bs);
+
+            // 计算最小值
+            int t1 = -1;
+            for (int j = 1; j <= 100; j++) {
+                if (bs.get(j)) {
+                    if (t1 != -1) {
+                        if (res[i] == -1 || res[i] > j - t1) {
+                            res[i] = j - t1;
+
+                            // 最优解，提前退出
+                            if (res[i] == 1) {
+                                break;
+                            }
+                        }
+                    }
+                    t1 = j;
+                }
+            }
+        }
+
+        return res;
+    }
+
     static class Seg {
         int l, r;
         BitSet bs = new BitSet(101);
@@ -59,45 +99,5 @@ public class Q1906 {
 
         }
 
-    }
-
-    public int[] minDifference(int[] nums, int[][] queries) {
-
-        // 1 到 100?
-        int n = nums.length;
-        Seg root = Seg.build(0, n - 1, nums);
-
-        int m = queries.length;
-        int[] res = new int[m];
-
-        for (int i = 0; i < m; i++) {
-
-            res[i] = -1;
-            int[] q = queries[i];
-
-            // 获取区间内，包含[1,100]的覆盖值
-            BitSet bs = new BitSet(101);
-            Seg.query(root, q[0], q[1], bs);
-
-            // 计算最小值
-            int t1 = -1;
-            for (int j = 1; j <= 100; j++) {
-                if (bs.get(j)) {
-                    if (t1 != -1) {
-                        if (res[i] == -1 || res[i] > j - t1) {
-                            res[i] = j - t1;
-
-                            // 最优解，提前退出
-                            if (res[i] == 1) {
-                                break;
-                            }
-                        }
-                    }
-                    t1 = j;
-                }
-            }
-        }
-
-        return res;
     }
 }

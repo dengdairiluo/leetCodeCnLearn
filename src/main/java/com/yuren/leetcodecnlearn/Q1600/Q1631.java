@@ -9,6 +9,7 @@ package com.yuren.leetcodecnlearn.Q1600;
  */
 public class Q1631 {
     int n, m;
+    int[] d = new int[]{0, 1, 0, -1, 0};
 
     public int minimumEffortPath(int[][] heights) {
         n = heights.length;
@@ -22,8 +23,6 @@ public class Q1631 {
         }
         return left;
     }
-
-    int[] d = new int[]{0, 1, 0, -1, 0};
 
     private boolean fun(int[][] heights, boolean[][] visited, int mid, int row, int col) {
         if (row == n - 1 && col == m - 1) return true;

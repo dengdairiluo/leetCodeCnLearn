@@ -13,8 +13,7 @@ import java.util.List;
  * @date 2022-08-24 00:03
  */
 public class Q954 {
-    private static final int N = 100010, M = N * 2;
-    private static final int[] CNTS = new int[M * 2];
+    private static final int[] CNTS = new int[M * 2];    private static final int N = 100010, M = N * 2;
 
     public boolean canReorderDoubled(int[] arr) {
         Arrays.fill(CNTS, 0);
@@ -33,4 +32,6 @@ public class Q954 {
         }
         return true;
     }
+
+
 }

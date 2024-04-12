@@ -8,19 +8,6 @@ package com.yuren.leetcodecnlearn.Q1200;
  * @date 2023-01-18 00:08
  */
 public class Q1298 {
-    public int maxCandies(int[] status, int[] candies, int[][] keys, int[][] containedBoxes, int[] initialBoxes) {
-        int n = 0;
-        int u = status.length, u1 = keys[0].length, u2 = containedBoxes[0].length;
-        boolean[] a = new boolean[u];
-        for (int i = 0; i < initialBoxes.length; i++) {
-            recurse(status, keys, containedBoxes, a, initialBoxes[i]);
-        }
-        for (int i = 0; i < u; i++) {
-            if (a[i] && status[i] == 1) n += candies[i];
-        }
-        return n;
-    }
-
     public static void recurse(int[] status, int[][] keys, int[][] containedBoxes, boolean[] a, int o) {
         int u = status.length, u1 = keys[o].length, u2 = containedBoxes[o].length;
         for (int j = 0; j < u1; j++) {
@@ -41,5 +28,18 @@ public class Q1298 {
             }
         }
         a[o] = true;
+    }
+
+    public int maxCandies(int[] status, int[] candies, int[][] keys, int[][] containedBoxes, int[] initialBoxes) {
+        int n = 0;
+        int u = status.length, u1 = keys[0].length, u2 = containedBoxes[0].length;
+        boolean[] a = new boolean[u];
+        for (int i = 0; i < initialBoxes.length; i++) {
+            recurse(status, keys, containedBoxes, a, initialBoxes[i]);
+        }
+        for (int i = 0; i < u; i++) {
+            if (a[i] && status[i] == 1) n += candies[i];
+        }
+        return n;
     }
 }

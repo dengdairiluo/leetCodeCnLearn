@@ -11,7 +11,7 @@ import java.util.Map;
  * @date 2022-04-25 07:10
  */
 public class Q677 {
-    Map<String,Integer> map;
+    Map<String, Integer> map;
 
     public Q677() {
         map = new HashMap<>();
@@ -23,8 +23,8 @@ public class Q677 {
 
     public int sum(String prefix) {
         int ans = 0;
-        for(String s: map.keySet()){
-            if(s.startsWith(prefix)){
+        for (String s : map.keySet()) {
+            if (s.startsWith(prefix)) {
                 ans += map.get(s);
             }
         }

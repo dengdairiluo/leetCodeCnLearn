@@ -24,16 +24,16 @@ public class Q765 {
 
         private int count;
 
-        public int getCount() {
-            return count;
-        }
-
         public UnionFind(int n) {
             this.count = n;
             this.parent = new int[n];
             for (int i = 0; i < n; i++) {
                 parent[i] = i;
             }
+        }
+
+        public int getCount() {
+            return count;
         }
 
         public int find(int x) {

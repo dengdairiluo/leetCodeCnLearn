@@ -10,20 +10,9 @@ import java.util.HashMap;
  * @date 2022-12-27 23:37
  */
 public class Q1244 {
-    private static class ListNode {
-        ListNode prev;
-        ListNode next;
-        int value = 0;
-
-        public ListNode(int val) {
-            value = val;
-        }
-    }
-
     HashMap<Integer, ListNode> map;
     ListNode head = new ListNode(1000001);
     ListNode tail = new ListNode(0);
-
     public Q1244() {
         map = new HashMap<>();
         head.next = tail;
@@ -71,5 +60,15 @@ public class Q1244 {
         node.next = current;
         current.prev = node;
         node.prev.next = node;
+    }
+
+    private static class ListNode {
+        ListNode prev;
+        ListNode next;
+        int value = 0;
+
+        public ListNode(int val) {
+            value = val;
+        }
     }
 }

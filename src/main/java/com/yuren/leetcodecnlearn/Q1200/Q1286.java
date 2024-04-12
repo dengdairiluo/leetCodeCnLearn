@@ -11,10 +11,10 @@ public class Q1286 {
     private final int[] ans;
     private final int ansLen;
     private final char[] chars;
-    private boolean hasNext;
-    private int p;
     private final int diff;
     private final int last;
+    private boolean hasNext;
+    private int p;
 
     public Q1286(String characters, int combinationLength) {
         this.ansLen = combinationLength;

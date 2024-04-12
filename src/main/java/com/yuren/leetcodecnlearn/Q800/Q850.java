@@ -13,63 +13,6 @@ import java.util.TreeSet;
  * @date 2022-07-10 22:16
  */
 public class Q850 {
-    private static class Node {
-        private final int leftRange;
-        private final int rightRange;
-        private final int mid;
-        private long segmentLength;
-        private Node leftChild;
-        private Node rightChild;
-        private int level;// level==0 表示
-
-        public Node(int left, int right) {
-            this.leftRange = left;
-            this.rightRange = right;
-            this.mid = ((this.rightRange - this.leftRange) >> 1) + this.leftRange;
-        }
-
-        private Node leftNode() {
-            if (this.leftChild == null) {
-                this.leftChild = new Node(this.leftRange, this.mid);
-            }
-            return this.leftChild;
-        }
-
-        private Node rightNode() {
-            if (this.rightChild == null) {
-                this.rightChild = new Node(this.mid, this.rightRange);
-            }
-            return this.rightChild;
-        }
-
-        public void update(int left, int right, int update, int[] compressX) {
-            // 必须有宽度，不能包含等于
-            if (left >= right) {
-                return;
-            }
-            if (left == this.leftRange && right == this.rightRange) {
-                // 多个矩形边重合
-                level += update;
-                if (level == 1) {
-                    this.segmentLength = compressX[right] - compressX[left];
-                } else if (level == 0) {
-                    // 这个地方一层没有，不一定是0啊，错这里了。只是[LeftRange,RightRange]连续的长度没了，但是不代表没有组合的长度
-                    this.segmentLength = this.leftNode().segmentLength + this.rightNode().segmentLength;
-                }
-            } else {
-                this.leftNode().update(left, Math.min(this.mid, right), update, compressX);
-                this.rightNode().update(Math.max(this.mid, left), right, update, compressX);
-                // 就丢了这一句话，这块不能无脑左右加的，因为父节点可能比子节点大，无脑加反而变小了
-                if (level == 0) {
-                    // 因为没有从父节点下发任务的过程
-                    this.segmentLength = this.leftNode().segmentLength + this.rightNode().segmentLength;
-                }
-
-            }
-
-        }
-    }
-
     /**
      * [0,0,2,2],[1,0,2,3],[1,0,3,1]
      * [x,y,x,y]
@@ -134,5 +77,62 @@ public class Q850 {
             }
         }
         return (int) ans;
+    }
+
+    private static class Node {
+        private final int leftRange;
+        private final int rightRange;
+        private final int mid;
+        private long segmentLength;
+        private Node leftChild;
+        private Node rightChild;
+        private int level;// level==0 表示
+
+        public Node(int left, int right) {
+            this.leftRange = left;
+            this.rightRange = right;
+            this.mid = ((this.rightRange - this.leftRange) >> 1) + this.leftRange;
+        }
+
+        private Node leftNode() {
+            if (this.leftChild == null) {
+                this.leftChild = new Node(this.leftRange, this.mid);
+            }
+            return this.leftChild;
+        }
+
+        private Node rightNode() {
+            if (this.rightChild == null) {
+                this.rightChild = new Node(this.mid, this.rightRange);
+            }
+            return this.rightChild;
+        }
+
+        public void update(int left, int right, int update, int[] compressX) {
+            // 必须有宽度，不能包含等于
+            if (left >= right) {
+                return;
+            }
+            if (left == this.leftRange && right == this.rightRange) {
+                // 多个矩形边重合
+                level += update;
+                if (level == 1) {
+                    this.segmentLength = compressX[right] - compressX[left];
+                } else if (level == 0) {
+                    // 这个地方一层没有，不一定是0啊，错这里了。只是[LeftRange,RightRange]连续的长度没了，但是不代表没有组合的长度
+                    this.segmentLength = this.leftNode().segmentLength + this.rightNode().segmentLength;
+                }
+            } else {
+                this.leftNode().update(left, Math.min(this.mid, right), update, compressX);
+                this.rightNode().update(Math.max(this.mid, left), right, update, compressX);
+                // 就丢了这一句话，这块不能无脑左右加的，因为父节点可能比子节点大，无脑加反而变小了
+                if (level == 0) {
+                    // 因为没有从父节点下发任务的过程
+                    this.segmentLength = this.leftNode().segmentLength + this.rightNode().segmentLength;
+                }
+
+            }
+
+        }
     }
 }

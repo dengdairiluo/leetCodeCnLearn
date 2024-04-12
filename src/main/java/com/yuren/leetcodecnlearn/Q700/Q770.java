@@ -15,8 +15,8 @@ import java.util.List;
 public class Q770 {
     public List<String> basicCalculatorIV(String expression, String[] evalvars, int[] evalints) {
         class Item implements Comparable<Item> {
-            int coeff;
             private final ArrayList<String> factors;
+            int coeff;
 
             private Item(String factor, int coeff) {
                 this.factors = new ArrayList<>();

@@ -10,6 +10,8 @@ import com.yuren.leetcodecnlearn.entity.TreeNode;
  * @date 2023-03-12 23:49
  */
 public class Q1448 {
+    int ans = 0;
+
     public int goodNodes(TreeNode root) {
         if (root == null) {
             return 0;
@@ -17,8 +19,6 @@ public class Q1448 {
         dfs(root, root.val);
         return ans;
     }
-
-    int ans = 0;
 
     void dfs(TreeNode node, int curMax) {
         if (node == null) {

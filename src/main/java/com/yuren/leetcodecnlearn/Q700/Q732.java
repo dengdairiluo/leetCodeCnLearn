@@ -8,10 +8,6 @@ package com.yuren.leetcodecnlearn.Q700;
  * @date 2022-05-19 23:28
  */
 public class Q732 {
-    private static class Node {
-        int ls, rs, add, max;
-    }
-
     int N = (int) 1e9, M = 4 * 400 * 20, cnt = 1;
     Node[] tr = new Node[M];
 
@@ -66,5 +62,9 @@ public class Q732 {
     public int book(int start, int end) {
         update(1, 1, N + 1, start + 1, end, 1);
         return query(1, 1, N + 1, 1, N + 1);
+    }
+
+    private static class Node {
+        int ls, rs, add, max;
     }
 }

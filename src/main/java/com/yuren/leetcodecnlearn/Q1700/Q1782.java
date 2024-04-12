@@ -13,6 +13,8 @@ import java.util.Set;
  * @date 2023-07-19 22:30
  */
 public class Q1782 {
+    int[] arr;
+
     private int hash(int u, int v) {
         if (u > v) {
             return (v << 15) | u;
@@ -63,8 +65,6 @@ public class Q1782 {
         }
         return ans;
     }
-
-    int[] arr;
 
     private int lowbit(int x) {
         return x & -x;

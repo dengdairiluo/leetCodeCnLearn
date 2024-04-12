@@ -24,16 +24,16 @@ public class Q735 {
                 if (asteroids[i] < 0 && Math.abs(stack.peek()) > Math.abs(asteroids[i])) {
                     flag = true;
                     break;
-                //当前元素绝对值大于栈顶元素绝对值，栈顶元素出栈，当前元素继续与新栈顶元素比较
+                    //当前元素绝对值大于栈顶元素绝对值，栈顶元素出栈，当前元素继续与新栈顶元素比较
                 } else if (asteroids[i] < 0 && Math.abs(stack.peek()) < Math.abs(asteroids[i])) {
                     stack.pop();
-                //当前元素绝对值等于栈顶元素绝对值，栈顶元素出栈，当前元素不入栈
+                    //当前元素绝对值等于栈顶元素绝对值，栈顶元素出栈，当前元素不入栈
                 } else if (asteroids[i] < 0 && Math.abs(stack.peek()) == Math.abs(asteroids[i])) {
                     stack.pop();
                     flag = true;
                     break;
                 } else break;
-            //其他情况 当前元素入栈
+                //其他情况 当前元素入栈
             }
             if (!flag) stack.push(asteroids[i]);
             i++;

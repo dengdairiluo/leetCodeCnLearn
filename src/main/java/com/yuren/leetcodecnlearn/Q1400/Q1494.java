@@ -8,6 +8,58 @@ package com.yuren.leetcodecnlearn.Q1400;
  * @date 2023-03-29 23:37
  */
 public class Q1494 {
+    private static boolean loop1(int[] preOrderList, int[] jie, int preIndex, int j, int k, int[] levelCount, int totalRel, int[][][] relMap) {
+        int currentKe = preOrderList[preIndex];
+        outer:
+        for (int i = 1; i <= j; i++) {
+            //校验层上的数量上限
+            if (levelCount[i - 1] >= k) {
+                continue;
+            }
+
+            //遍历校验依赖关系,假设有依赖关系不满足则进行下一次循环
+
+            int currentKeTmp = 1 << (currentKe + 1);
+            if ((totalRel & currentKeTmp) == currentKeTmp) {
+                //当前课程存在约束需要判断
+                for (int i1 : relMap[currentKe][0]) {
+                    if (i1 == 0) {
+                        break;
+                    }
+                    if (jie[i1 - 1] != 0 && jie[i1 - 1] >= i) {
+                        continue outer;
+                    }
+                }
+                for (int i1 : relMap[currentKe][1]) {
+                    if (i1 == 0) {
+                        break;
+                    }
+                    if (jie[i1 - 1] != 0 && jie[i1 - 1] <= i) {
+                        continue outer;
+                    }
+                }
+            }
+
+            jie[currentKe] = i;
+            levelCount[i - 1]++;
+            if (jie.length == preIndex + 1) {
+                //最底层
+                // System.out.println(Arrays.toString(jie));
+                return true;
+            } else {
+                boolean b = loop1(preOrderList, jie, preIndex + 1, j, k, levelCount, totalRel, relMap);
+                if (!b) {
+                    jie[currentKe] = 0;
+                    levelCount[i - 1]--;
+                } else {
+                    return b;
+                }
+            }
+
+        }
+        return false;
+    }
+
     public int minNumberOfSemesters(int n, int[][] relations, int k) {
         //从最少层朝上试探
         int level = Math.round((float) n / k);
@@ -74,57 +126,5 @@ public class Q1494 {
 
         }
         return 1;
-    }
-
-    private static boolean loop1(int[] preOrderList, int[] jie, int preIndex, int j, int k, int[] levelCount, int totalRel, int[][][] relMap) {
-        int currentKe = preOrderList[preIndex];
-        outer:
-        for (int i = 1; i <= j; i++) {
-            //校验层上的数量上限
-            if (levelCount[i - 1] >= k) {
-                continue;
-            }
-
-            //遍历校验依赖关系,假设有依赖关系不满足则进行下一次循环
-
-            int currentKeTmp = 1 << (currentKe + 1);
-            if ((totalRel & currentKeTmp) == currentKeTmp) {
-                //当前课程存在约束需要判断
-                for (int i1 : relMap[currentKe][0]) {
-                    if (i1 == 0) {
-                        break;
-                    }
-                    if (jie[i1 - 1] != 0 && jie[i1 - 1] >= i) {
-                        continue outer;
-                    }
-                }
-                for (int i1 : relMap[currentKe][1]) {
-                    if (i1 == 0) {
-                        break;
-                    }
-                    if (jie[i1 - 1] != 0 && jie[i1 - 1] <= i) {
-                        continue outer;
-                    }
-                }
-            }
-
-            jie[currentKe] = i;
-            levelCount[i - 1]++;
-            if (jie.length == preIndex + 1) {
-                //最底层
-                // System.out.println(Arrays.toString(jie));
-                return true;
-            } else {
-                boolean b = loop1(preOrderList, jie, preIndex + 1, j, k, levelCount, totalRel, relMap);
-                if (!b) {
-                    jie[currentKe] = 0;
-                    levelCount[i - 1]--;
-                } else {
-                    return b;
-                }
-            }
-
-        }
-        return false;
     }
 }

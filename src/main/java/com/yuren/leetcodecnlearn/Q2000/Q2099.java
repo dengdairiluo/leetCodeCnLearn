@@ -8,6 +8,32 @@ package com.yuren.leetcodecnlearn.Q2000;
  * @date 2023-12-07 23:22
  */
 public class Q2099 {
+    public int[] maxSubsequence(int[] nums, int k) {
+        int leftNumber = nums.length - k;
+        int[] ans = new int[k];
+        Heap heap = new Heap(nums.length);
+        for (int number : nums) {
+            heap.add(number);
+        }
+        while (leftNumber > 0) {
+            int smallNumber = heap.poll();
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == smallNumber) {
+                    nums[i] = Integer.MAX_VALUE;
+                    break;
+                }
+            }
+            leftNumber--;
+        }
+        for (int i = 0; i < ans.length; i++) {
+            while (nums[leftNumber] == Integer.MAX_VALUE) {
+                leftNumber++;
+            }
+            ans[i] = nums[leftNumber++];
+        }
+        return ans;
+    }
+
     private static class Heap {
         int[] data;
         int size;
@@ -58,32 +84,6 @@ public class Q2099 {
             siftDown(0);
             return ans;
         }
-    }
-
-    public int[] maxSubsequence(int[] nums, int k) {
-        int leftNumber = nums.length - k;
-        int[] ans = new int[k];
-        Heap heap = new Heap(nums.length);
-        for (int number : nums) {
-            heap.add(number);
-        }
-        while (leftNumber > 0) {
-            int smallNumber = heap.poll();
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] == smallNumber) {
-                    nums[i] = Integer.MAX_VALUE;
-                    break;
-                }
-            }
-            leftNumber--;
-        }
-        for (int i = 0; i < ans.length; i++) {
-            while (nums[leftNumber] == Integer.MAX_VALUE) {
-                leftNumber++;
-            }
-            ans[i] = nums[leftNumber++];
-        }
-        return ans;
     }
 
 }

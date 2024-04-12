@@ -14,13 +14,10 @@ import java.util.Map;
  */
 public class Q1357 {
 
-    private int n = 0;
-
-    private int discount = 0;
-
-    private Map<Integer, Integer> map = new HashMap<>();
-
     private final Deque<Double> deque = new ArrayDeque<>();
+    private int n = 0;
+    private int discount = 0;
+    private Map<Integer, Integer> map = new HashMap<>();
 
     public Q1357(int n, int discount, int[] products, int[] prices) {
         this.n = n;

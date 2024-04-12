@@ -21,7 +21,7 @@ public class Q2113 {
                 // 下标转换
                 int idx = queries[i][1] + t;
                 res[i] = idx >= len ? -1 : nums[idx];
-            // 后一半
+                // 后一半
             } else {
                 int idx = queries[i][1];
                 res[i] = idx >= (t - len) ? -1 : nums[idx];

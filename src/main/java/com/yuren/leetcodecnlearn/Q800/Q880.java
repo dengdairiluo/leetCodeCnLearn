@@ -91,7 +91,7 @@ public class Q880 {
             }
             int index = starts[ans] + sizes[ans] - 1;
             return String.valueOf(cs[index]);
-        // 大于前一组能达到的最大长度，说明答案在ans组里
+            // 大于前一组能达到的最大长度，说明答案在ans组里
         } else if (pos > reachs[ans - 1]) {
             return this.find(ans, ans, (int) (pos - reachs[ans - 1]));
         } else {// 此刻说明答案同ans组没有关系

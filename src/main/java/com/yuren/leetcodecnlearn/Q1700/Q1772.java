@@ -10,21 +10,6 @@ import java.util.*;
  * @date 2023-07-16 23:26
  */
 public class Q1772 {
-    private static class FeatureInfo {
-        public String feature;
-
-        public int sum;
-
-        public int tag;
-
-        public FeatureInfo(String feature, int sum, int tag) {
-            this.feature = feature;
-            this.sum = sum;
-            this.tag = tag;
-        }
-    }
-
-
     public String[] sortFeatures(String[] features, String[] responses) {
         Set<String> featureSet = new HashSet<>(Arrays.asList(features));
 
@@ -57,5 +42,19 @@ public class Q1772 {
             result[i] = featureInfoList.get(i).feature;
         }
         return result;
+    }
+
+    private static class FeatureInfo {
+        public String feature;
+
+        public int sum;
+
+        public int tag;
+
+        public FeatureInfo(String feature, int sum, int tag) {
+            this.feature = feature;
+            this.sum = sum;
+            this.tag = tag;
+        }
     }
 }

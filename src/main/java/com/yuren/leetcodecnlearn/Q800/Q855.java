@@ -20,11 +20,11 @@ public class Q855 {
      * 存储以 p 为终点的所有线段
      */
     private final Map<Integer, int[]> endMap;
+    private final TreeSet<int[]> pq;
     /**
      * 存储所有线段并排序
      */
     private int N;
-    private final TreeSet<int[]> pq;
 
     public Q855(int n) {
 

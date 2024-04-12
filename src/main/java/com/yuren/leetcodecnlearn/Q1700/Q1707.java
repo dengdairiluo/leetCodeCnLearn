@@ -8,18 +8,7 @@ package com.yuren.leetcodecnlearn.Q1700;
  * @date 2023-06-21 23:03
  */
 public class Q1707 {
-    private static class TreeNode {
-        int minNum;
-
-        TreeNode(int minNum) {
-            this.minNum = minNum;
-        }
-
-        TreeNode left, right;
-    }
-
     private TreeNode root;
-
     private int treeHeight;
 
     private void initTreeHeight(int[] nums) {
@@ -84,5 +73,14 @@ public class Q1707 {
             result[i] = queryMaxXor(queries[i][0], queries[i][1]);
         }
         return result;
+    }
+
+    private static class TreeNode {
+        int minNum;
+        TreeNode left, right;
+
+        TreeNode(int minNum) {
+            this.minNum = minNum;
+        }
     }
 }

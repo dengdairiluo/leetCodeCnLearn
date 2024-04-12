@@ -22,9 +22,9 @@ public class Q1793 {
             if (l < 0 && r == n) break;
             //更新nums[k] 为左右边界中的较大者
             if (l >= 0 && r < n) nums[k] = Math.max(nums[l], nums[r]);
-            //左边遍历完了，更新nums[k]为右边界
+                //左边遍历完了，更新nums[k]为右边界
             else if (l < 0) nums[k] = nums[r];
-            //右边遍历完了，更新nums[k]为左边界
+                //右边遍历完了，更新nums[k]为左边界
             else nums[k] = nums[l];
         }
         return res;

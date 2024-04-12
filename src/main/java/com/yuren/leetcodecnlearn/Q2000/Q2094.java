@@ -1,7 +1,6 @@
 package com.yuren.leetcodecnlearn.Q2000;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**

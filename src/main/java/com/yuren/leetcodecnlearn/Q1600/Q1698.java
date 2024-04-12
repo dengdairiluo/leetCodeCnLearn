@@ -8,14 +8,6 @@ package com.yuren.leetcodecnlearn.Q1600;
  * @date 2023-06-17 23:23
  */
 public class Q1698 {
-    private static class TrieNode {
-        public TrieNode[] next;
-
-        public TrieNode() {
-            next = new TrieNode[26];
-        }
-    }
-
     public int countDistinct(String s) {
         int res = 0;
         int n = s.length();
@@ -32,5 +24,13 @@ public class Q1698 {
             }
         }
         return res;
+    }
+
+    private static class TrieNode {
+        public TrieNode[] next;
+
+        public TrieNode() {
+            next = new TrieNode[26];
+        }
     }
 }

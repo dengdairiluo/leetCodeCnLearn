@@ -10,16 +10,6 @@ import java.util.Arrays;
  * @date 2022-10-19 23:25
  */
 public class Q1090 {
-    private static class Node {
-        int value;
-        int label;
-
-        public Node(int value, int label) {
-            this.value = value;
-            this.label = label;
-        }
-    }
-
     public int largestValsFromLabels(int[] values, int[] labels, int numWanted, int useLimit) {
         int n = values.length;
         Node[] nodes = new Node[n];
@@ -48,5 +38,15 @@ public class Q1090 {
         }
         //返回结果
         return ans;
+    }
+
+    private static class Node {
+        int value;
+        int label;
+
+        public Node(int value, int label) {
+            this.value = value;
+            this.label = label;
+        }
     }
 }

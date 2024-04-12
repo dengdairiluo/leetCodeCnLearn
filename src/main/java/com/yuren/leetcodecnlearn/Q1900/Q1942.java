@@ -41,7 +41,7 @@ public class Q1942 {
                     Integer chair = chairs.poll();
                     each.add(new int[]{now[1], chair, -1});
                 }
-            //return
+                //return
             } else {
                 chairs.add(now[1]);
             }

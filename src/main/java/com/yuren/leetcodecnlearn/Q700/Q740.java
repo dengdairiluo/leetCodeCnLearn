@@ -30,5 +30,6 @@ public class Q740 {
         }
         return second;
     }
+
     ;
 }

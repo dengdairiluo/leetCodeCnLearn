@@ -15,30 +15,6 @@ import java.util.Queue;
 public class Q1786 {
     static final int MOD = 1000_000_007;
 
-    static class Edge {
-        int nodeId, weight;
-
-        public Edge(int nodeId, int weight) {
-            this.nodeId = nodeId;
-            this.weight = weight;
-        }
-    }
-
-    static class NodeState implements Comparable<NodeState> {
-        int nodeId;
-        int dist;
-
-        public NodeState(int nodeId, int dist) {
-            this.nodeId = nodeId;
-            this.dist = dist;
-        }
-
-        @Override
-        public int compareTo(NodeState other) {
-            return Integer.compare(dist, other.dist);
-        }
-    }
-
     public int countRestrictedPaths(int n, int[][] edges) {
 
         List<Edge>[] adjIdLists = new List[n + 1];
@@ -86,5 +62,29 @@ public class Q1786 {
             }
         }
         return counts[1];
+    }
+
+    static class Edge {
+        int nodeId, weight;
+
+        public Edge(int nodeId, int weight) {
+            this.nodeId = nodeId;
+            this.weight = weight;
+        }
+    }
+
+    static class NodeState implements Comparable<NodeState> {
+        int nodeId;
+        int dist;
+
+        public NodeState(int nodeId, int dist) {
+            this.nodeId = nodeId;
+            this.dist = dist;
+        }
+
+        @Override
+        public int compareTo(NodeState other) {
+            return Integer.compare(dist, other.dist);
+        }
     }
 }

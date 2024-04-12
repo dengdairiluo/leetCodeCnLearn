@@ -11,12 +11,12 @@ import java.util.Stack;
  */
 public class Q2296 {
 
+    Stack<Character> a, b;
+
     public Q2296() {
         a = new Stack<>();
         b = new Stack<>();
     }
-
-    Stack<Character> a, b;
 
     public void addText(String text) {
         char[] array = text.toCharArray();

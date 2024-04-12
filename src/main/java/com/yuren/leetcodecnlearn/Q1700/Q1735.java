@@ -8,12 +8,12 @@ package com.yuren.leetcodecnlearn.Q1700;
  * @date 2023-07-01 23:52
  */
 public class Q1735 {
-    int mod = 1000000007;
     static int[] js = new int[10015];
     static int[] div = new int[10015];
     static int[] prime = new int[10001];
     static int dqjs = 0;
     static boolean xyLoaded = true;
+    int mod = 1000000007;
 
     public int[] waysToFillArray(int[][] queries) {
         if (xyLoaded) {

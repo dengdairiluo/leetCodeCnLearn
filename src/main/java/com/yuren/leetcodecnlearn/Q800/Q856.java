@@ -21,8 +21,8 @@ public class Q856 {
             bal += s.charAt(k) == '(' ? 1 : -1;
             if (bal == 0) {
                 if (k - i == 1) ans++;
-                else ans += 2 * f(s, i+1, k);
-                i = k+1;
+                else ans += 2 * f(s, i + 1, k);
+                i = k + 1;
             }
         }
 

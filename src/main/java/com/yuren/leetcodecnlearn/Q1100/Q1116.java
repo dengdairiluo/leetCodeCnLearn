@@ -13,14 +13,12 @@ import java.util.function.IntConsumer;
  * @date 2022-10-30 22:57
  */
 public class Q1116 {
-    private int n;
-
-    private volatile int curValue = 0;
-
     private final Lock l = new ReentrantLock();
     private final Condition z = l.newCondition();
     private final Condition o = l.newCondition();
     private final Condition e = l.newCondition();
+    private int n;
+    private volatile int curValue = 0;
 
     public Q1116(int n) {
         this.n = n;

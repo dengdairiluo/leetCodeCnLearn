@@ -32,6 +32,72 @@ public class Q1195 {
         this.index = 1;
     }
 
+    public static void main(String[] args) throws InterruptedException {
+        FizzBuzz fizzBuzz = new FizzBuzz(10);
+        CountDownLatch latch = new CountDownLatch(4);
+        Runnable fizz = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    fizzBuzz.fizz(new Runnable() {
+                        @Override
+                        public void run() {
+                            System.out.println("fizz");
+                        }
+                    });
+                } finally {
+                    latch.countDown();
+                }
+            }
+        };
+        Runnable buzz = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    fizzBuzz.buzz(new Runnable() {
+                        @Override
+                        public void run() {
+                            System.out.println("buzz");
+                        }
+                    });
+                } finally {
+                    latch.countDown();
+                }
+            }
+        };
+        Runnable fizzbuzz = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    fizzBuzz.fizzbuzz(new Runnable() {
+                        @Override
+                        public void run() {
+                            System.out.println("fizzbuzz");
+                        }
+                    });
+                } finally {
+                    latch.countDown();
+                }
+            }
+        };
+        Runnable number = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    fizzBuzz.number(System.out::println);
+                } finally {
+                    latch.countDown();
+                }
+            }
+        };
+        new Thread(fizz).start();
+        new Thread(buzz).start();
+        new Thread(fizzbuzz).start();
+        new Thread(number).start();
+        latch.await();
+        System.out.println("done...");
+    }
+
     /**
      * printFizz.run() outputs "fizz".
      *
@@ -121,73 +187,6 @@ public class Q1195 {
         }
         lock.unlock();
     }
-
-    public static void main(String[] args) throws InterruptedException {
-        FizzBuzz fizzBuzz = new FizzBuzz(10);
-        CountDownLatch latch = new CountDownLatch(4);
-        Runnable fizz = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    fizzBuzz.fizz(new Runnable() {
-                        @Override
-                        public void run() {
-                            System.out.println("fizz");
-                        }
-                    });
-                } finally {
-                    latch.countDown();
-                }
-            }
-        };
-        Runnable buzz = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    fizzBuzz.buzz(new Runnable() {
-                        @Override
-                        public void run() {
-                            System.out.println("buzz");
-                        }
-                    });
-                } finally {
-                    latch.countDown();
-                }
-            }
-        };
-        Runnable fizzbuzz = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    fizzBuzz.fizzbuzz(new Runnable() {
-                        @Override
-                        public void run() {
-                            System.out.println("fizzbuzz");
-                        }
-                    });
-                } finally {
-                    latch.countDown();
-                }
-            }
-        };
-        Runnable number = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    fizzBuzz.number(System.out::println);
-                } finally {
-                    latch.countDown();
-                }
-            }
-        };
-        new Thread(fizz).start();
-        new Thread(buzz).start();
-        new Thread(fizzbuzz).start();
-        new Thread(number).start();
-        latch.await();
-        System.out.println("done...");
-    }
-
 
     private static class FizzBuzz {
         // constructor

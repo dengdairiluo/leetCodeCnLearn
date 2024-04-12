@@ -13,15 +13,6 @@ import java.util.List;
  * @date 2022-12-25 02:32
  */
 public class Q1233 {
-    private static class FolderTrieNode {
-        char val;
-        boolean isEnd;
-        FolderTrieNode[] children = new FolderTrieNode[27];
-
-        public FolderTrieNode() {
-        }
-    }
-
     public List<String> removeSubfolders(String[] folder) {
         Arrays.sort(folder, Comparator.comparingInt(String::length));
         FolderTrieNode root = new FolderTrieNode();
@@ -53,6 +44,15 @@ public class Q1233 {
             } else {
                 node = tempNode;
             }
+        }
+    }
+
+    private static class FolderTrieNode {
+        char val;
+        boolean isEnd;
+        FolderTrieNode[] children = new FolderTrieNode[27];
+
+        public FolderTrieNode() {
         }
     }
 }

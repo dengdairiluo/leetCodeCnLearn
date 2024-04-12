@@ -1,7 +1,5 @@
 package com.yuren.leetcodecnlearn.Q1600;
 
-import java.util.Arrays;
-
 /**
  * Created with Intellij IDEA.
  * Description:

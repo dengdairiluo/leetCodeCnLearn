@@ -10,6 +10,24 @@ import java.util.Arrays;
  * @date 2022-11-07 23:50
  */
 public class Q1135 {
+    public int minimumCost(int n, int[][] connections) {
+        // 从1开始的
+        UF uf = new UF(n + 1);
+        Arrays.sort(connections, (a, b) -> (a[2] - b[2]));
+        // 权重
+        int mst = 0;
+        for (int[] c : connections) {
+            int u = c[0];
+            int v = c[1];
+            int weight = c[2];
+            if (!uf.connect(u, v)) {
+                mst += weight;
+                uf.union(u, v);
+            }
+        }
+        return uf.count == 2 ? mst : -1;
+    }
+
     private static class UF {
         int count;
         int[] size;
@@ -54,23 +72,5 @@ public class Q1135 {
         int getCount() {
             return count;
         }
-    }
-
-    public int minimumCost(int n, int[][] connections) {
-        // 从1开始的
-        UF uf = new UF(n + 1);
-        Arrays.sort(connections, (a, b) -> (a[2] - b[2]));
-        // 权重
-        int mst = 0;
-        for (int[] c : connections) {
-            int u = c[0];
-            int v = c[1];
-            int weight = c[2];
-            if (!uf.connect(u, v)) {
-                mst += weight;
-                uf.union(u, v);
-            }
-        }
-        return uf.count == 2 ? mst : -1;
     }
 }

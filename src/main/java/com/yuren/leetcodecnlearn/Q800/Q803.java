@@ -8,10 +8,9 @@ package com.yuren.leetcodecnlearn.Q800;
  * @date 2022-06-20 23:30
  */
 public class Q803 {
+    public static final int[][] DIRECTIONS = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
     private int rows;
     private int cols;
-
-    public static final int[][] DIRECTIONS = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
 
     public int[] hitBricks(int[][] grid, int[][] hits) {
         this.rows = grid.length;

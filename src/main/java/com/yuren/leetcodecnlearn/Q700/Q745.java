@@ -12,10 +12,11 @@ import java.util.Map;
  */
 public class Q745 {
     TrieNode trie;
+
     public Q745(String[] words) {
         trie = new TrieNode();
         int wt = 0;
-        for (String word: words) {
+        for (String word : words) {
             TrieNode cur = trie;
             cur.weight = wt;
             int L = word.length();
@@ -60,14 +61,16 @@ public class Q745 {
             int code = (c1 - '`') * 27 + (c2 - '`');
             cur = cur.children.get(code);
             if (cur == null) return -1;
-            i++; j--;
+            i++;
+            j--;
         }
         return cur.weight;
     }
 
     private static class TrieNode {
-         Map<Integer, TrieNode> children;
+        Map<Integer, TrieNode> children;
         int weight;
+
         public TrieNode() {
             children = new HashMap<>();
             weight = 0;

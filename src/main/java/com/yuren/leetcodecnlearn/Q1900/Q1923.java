@@ -13,88 +13,6 @@ public class Q1923 {
     public static final int L_TYPE = 0;
     public static final int S_TYPE = 1;
 
-    public int longestCommonSubpath(int n, int[][] paths) {
-        int len = 0;
-        int split = n + 1;
-        for (int[] path : paths) {
-            len += path.length;
-            ++len;
-        }
-        int m = paths.length;
-        int[] s = new int[len];
-        int sI = 0;
-        int[] belongs = new int[len];
-        int c = 0;
-        int min = paths[0].length;
-        for (int[] path : paths) {
-            min = Math.min(min, path.length);
-            for (int x : path) {
-                belongs[sI] = c;
-                s[sI++] = x + 1; //修改为1到n
-            }
-            belongs[sI] = -1;
-            ++c;
-            s[sI++] = split++;
-        }
-        s[len - 1] = 0; //修改最后一个分隔符号为0
-
-        //后缀数组计算
-        int[] sa = calcSA(s, split);
-        int[] rk = calcRk(sa);
-        int[] ht = calcHt(sa, rk, s);
-
-        //双指针
-        int[] visited = new int[m];
-        int visIdx = 1;
-        int visCnt = 0;
-        int ans = 0;
-
-        //单调队列
-        int[] queue = new int[len];
-        int qS = 0;
-        int qE = -1;
-        int l = 0;
-        int r = 0;
-        int pos = sa[r];
-        //queue.addLast(pos);
-        visited[belongs[pos]]++;
-        visCnt++;
-
-        while (++r < ht.length) {
-            int v = ht[r];
-            pos = sa[r];
-            if (belongs[pos] == -1) {
-                break;
-            }
-            while (qS <= qE && ht[queue[qE]] >= v) {
-                --qE;
-            }
-            //insert
-            queue[++qE] = r;
-            visited[belongs[pos]]++;
-            if (visited[belongs[pos]] == 1) {
-                visCnt++;
-            }
-
-            while (visCnt == m) {
-                //remove l
-                pos = sa[l];
-                visited[belongs[pos]]--;
-                if (visited[belongs[pos]] == 0) {
-                    visCnt--;
-                    //最后一次visCnt==m的单调队列队头值
-                    ans = Math.max(ans, ht[queue[qS]]);
-                }
-                ++l;
-                if (queue[qS] == l) {
-                    ++qS;
-                }
-            }
-
-        }
-        return ans;
-    }
-
     //诱导排序
     public static int[] calcSA(String s, int sigma) {
         int n = s.length();
@@ -291,5 +209,87 @@ public class Q1923 {
 
     private static boolean isLcmLetter(int[] type, int i) {
         return i > 0 && type[i] == S_TYPE && type[i - 1] == L_TYPE;
+    }
+
+    public int longestCommonSubpath(int n, int[][] paths) {
+        int len = 0;
+        int split = n + 1;
+        for (int[] path : paths) {
+            len += path.length;
+            ++len;
+        }
+        int m = paths.length;
+        int[] s = new int[len];
+        int sI = 0;
+        int[] belongs = new int[len];
+        int c = 0;
+        int min = paths[0].length;
+        for (int[] path : paths) {
+            min = Math.min(min, path.length);
+            for (int x : path) {
+                belongs[sI] = c;
+                s[sI++] = x + 1; //修改为1到n
+            }
+            belongs[sI] = -1;
+            ++c;
+            s[sI++] = split++;
+        }
+        s[len - 1] = 0; //修改最后一个分隔符号为0
+
+        //后缀数组计算
+        int[] sa = calcSA(s, split);
+        int[] rk = calcRk(sa);
+        int[] ht = calcHt(sa, rk, s);
+
+        //双指针
+        int[] visited = new int[m];
+        int visIdx = 1;
+        int visCnt = 0;
+        int ans = 0;
+
+        //单调队列
+        int[] queue = new int[len];
+        int qS = 0;
+        int qE = -1;
+        int l = 0;
+        int r = 0;
+        int pos = sa[r];
+        //queue.addLast(pos);
+        visited[belongs[pos]]++;
+        visCnt++;
+
+        while (++r < ht.length) {
+            int v = ht[r];
+            pos = sa[r];
+            if (belongs[pos] == -1) {
+                break;
+            }
+            while (qS <= qE && ht[queue[qE]] >= v) {
+                --qE;
+            }
+            //insert
+            queue[++qE] = r;
+            visited[belongs[pos]]++;
+            if (visited[belongs[pos]] == 1) {
+                visCnt++;
+            }
+
+            while (visCnt == m) {
+                //remove l
+                pos = sa[l];
+                visited[belongs[pos]]--;
+                if (visited[belongs[pos]] == 0) {
+                    visCnt--;
+                    //最后一次visCnt==m的单调队列队头值
+                    ans = Math.max(ans, ht[queue[qS]]);
+                }
+                ++l;
+                if (queue[qS] == l) {
+                    ++qS;
+                }
+            }
+
+        }
+        return ans;
     }
 }

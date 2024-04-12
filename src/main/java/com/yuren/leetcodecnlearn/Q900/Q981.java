@@ -13,18 +13,6 @@ import java.util.Map;
  * @date 2022-09-06 23:50
  */
 public class Q981 {
-    private static class Node {
-        String k;
-        String v;
-        int t;
-
-        Node(String k, String v, int t) {
-            this.k = k;
-            this.v = v;
-            this.t = t;
-        }
-    }
-
     Map<String, List<Node>> map = new HashMap<>();
 
     public void set(String k, String v, int t) {
@@ -50,5 +38,17 @@ public class Q981 {
             }
         }
         return list.get(r).t <= t ? list.get(r).v : "";
+    }
+
+    private static class Node {
+        String k;
+        String v;
+        int t;
+
+        Node(String k, String v, int t) {
+            this.k = k;
+            this.v = v;
+            this.t = t;
+        }
     }
 }

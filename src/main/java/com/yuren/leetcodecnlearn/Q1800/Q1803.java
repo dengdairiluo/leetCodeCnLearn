@@ -8,26 +8,6 @@ package com.yuren.leetcodecnlearn.Q1800;
  * @date 2023-07-29 22:18
  */
 public class Q1803 {
-    private static class Node {
-        int count;
-        Node[] next = new Node[2];
-
-        public Node(int count) {
-            this.count = count;
-        }
-    }
-
-    public int countPairs(int[] nums, int low, int high) {
-        Node root = new Node(0);
-        int hs = 0, ls = 0;
-        for (int num : nums) {
-            ls += query(root, num, low - 1);
-            hs += query(root, num, high);
-            add(root, num);
-        }
-        return hs - ls;
-    }
-
     private static void add(Node node, int x) {
         for (int i = 14; i >= 0; i--) {
             int ge = (x >> i) & 1;
@@ -53,5 +33,25 @@ public class Q1803 {
         }
         res += node.count;
         return res;
+    }
+
+    public int countPairs(int[] nums, int low, int high) {
+        Node root = new Node(0);
+        int hs = 0, ls = 0;
+        for (int num : nums) {
+            ls += query(root, num, low - 1);
+            hs += query(root, num, high);
+            add(root, num);
+        }
+        return hs - ls;
+    }
+
+    private static class Node {
+        int count;
+        Node[] next = new Node[2];
+
+        public Node(int count) {
+            this.count = count;
+        }
     }
 }

@@ -1,6 +1,9 @@
 package com.yuren.leetcodecnlearn.Q1500;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * Created with Intellij IDEA.

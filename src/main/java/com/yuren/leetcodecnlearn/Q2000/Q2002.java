@@ -3,18 +3,19 @@ package com.yuren.leetcodecnlearn.Q2000;
 /**
  * Created with Intellij IDEA.
  * Description:
- *         题解：见方法 2.
- *            https:leetcode.cn/problems/maximum-product-of-the-length-of-two-palindromic-subsequences/solution/mei-ju-dong-tai-gui-hua-jian-zhi-by-ling-r8ls/
- *          Fatal (1):
- *           太妙了!!! [两个不相交的子序列] 的最快的判断方式是，用二进制表示!!! 然后 (s1 & s2) == 0 即可!!! 妙啊!!!
- *           O(1) 就能判断!!! 前提是 s.length <= 32 就是了.
+ * 题解：见方法 2.
+ * https:leetcode.cn/problems/maximum-product-of-the-length-of-two-palindromic-subsequences/solution/mei-ju-dong-tai-gui-hua-jian-zhi-by-ling-r8ls/
+ * Fatal (1):
+ * 太妙了!!! [两个不相交的子序列] 的最快的判断方式是，用二进制表示!!! 然后 (s1 & s2) == 0 即可!!! 妙啊!!!
+ * O(1) 就能判断!!! 前提是 s.length <= 32 就是了.
+ * <p>
+ * Note:
+ * 二进制 DP. 且 "回文子序列" 的题是 $516!!! 我都不会做了.
+ * <p>
+ * s.length <= 12. 可以二进制 DP.
+ * 先有个回文子序列 DP，用来快速判断一个状态 s 构成的子序列的最长 palindrome 长度.
+ * DP[s]: DP[] 方程框架和 $516 一模一样. 只不过，s 是一个状态. 所以需要遍历 l 和 r 之间的 [所有] 状态，并转移到当前状态上.
  *
- *          Note:
- *           二进制 DP. 且 "回文子序列" 的题是 $516!!! 我都不会做了.
- *
- *          s.length <= 12. 可以二进制 DP.
- *          先有个回文子序列 DP，用来快速判断一个状态 s 构成的子序列的最长 palindrome 长度.
- *          DP[s]: DP[] 方程框架和 $516 一模一样. 只不过，s 是一个状态. 所以需要遍历 l 和 r 之间的 [所有] 状态，并转移到当前状态上.
  * @author lujiang
  * @date 2023-10-23 23:09
  */

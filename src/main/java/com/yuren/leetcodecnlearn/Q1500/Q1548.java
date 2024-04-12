@@ -12,10 +12,10 @@ import java.util.List;
  * @date 2023-04-22 23:51
  */
 public class Q1548 {
+    static int INF = (int) 1e9 + 1;
     int n;
     String[] names;
     String[] targetPath;
-    static int INF = (int) 1e9 + 1;
     List<Integer>[] adj;
     Integer[][] memo;
     int[][] next;

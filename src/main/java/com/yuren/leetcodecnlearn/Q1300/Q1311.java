@@ -10,16 +10,6 @@ import java.util.*;
  * @date 2023-01-20 23:49
  */
 public class Q1311 {
-    private static class VideoNode {
-        private final String video;
-        private final int times;
-
-        public VideoNode(String video, int times) {
-            this.video = video;
-            this.times = times;
-        }
-    }
-
     public List<String> watchedVideosByFriends(List<List<String>> watchedVideos, int[][] friends, int id, int level) {
         boolean[] flag = new boolean[102];
         flag[id] = true;
@@ -72,5 +62,15 @@ public class Q1311 {
             res.add(vn.video);
         }
         return res;
+    }
+
+    private static class VideoNode {
+        private final String video;
+        private final int times;
+
+        public VideoNode(String video, int times) {
+            this.video = video;
+            this.times = times;
+        }
     }
 }

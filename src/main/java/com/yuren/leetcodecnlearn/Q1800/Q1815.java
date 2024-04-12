@@ -11,9 +11,9 @@ import java.util.Map;
  * @date 2023-08-03 00:07
  */
 public class Q1815 {
+    private final Map<Integer, Integer> cache = new HashMap<>();
     private int m;
     private int[] val;
-    private final Map<Integer, Integer> cache = new HashMap<>();
 
     public int maxHappyGroups(int batchSize, int[] groups) {
         m = batchSize;

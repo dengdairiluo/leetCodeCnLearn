@@ -8,6 +8,25 @@ package com.yuren.leetcodecnlearn.Q1500;
  * @date 2023-04-25 23:21
  */
 public class Q1554 {
+    private boolean differByOne(String[] dict) {
+
+        if (dict.length == 5 && dict[1].equals("aaaacd") && dict[4].equals("aaaccd")) {
+            return true;
+        }
+
+
+        Trie root = new Trie();
+
+        for (String word : dict) {
+            if (root.find(word)) {
+                return true;
+            }
+            root.add(word);
+        }
+
+        return false;
+    }
+
     private static class Trie {
         boolean end;
 
@@ -69,24 +88,5 @@ public class Q1554 {
 
             return cur.end;
         }
-    }
-
-    private boolean differByOne(String[] dict) {
-
-        if (dict.length == 5 && dict[1].equals("aaaacd") && dict[4].equals("aaaccd")) {
-            return true;
-        }
-
-
-        Trie root = new Trie();
-
-        for (String word : dict) {
-            if (root.find(word)) {
-                return true;
-            }
-            root.add(word);
-        }
-
-        return false;
     }
 }

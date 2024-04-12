@@ -71,17 +71,6 @@ public class Q2014 {
 
     }
 
-
-    private static class Tup {
-        private String cur;
-        private int visit;
-
-        Tup(String cur, int visit) {
-            this.cur = cur;
-            this.visit = visit;
-        }
-    }
-
     private int repeatCountNew(String reg) {
         char[] chars = reg.toCharArray();
         int regIdx = 0;
@@ -118,5 +107,15 @@ public class Q2014 {
             }
         }
         return term;
+    }
+
+    private static class Tup {
+        private String cur;
+        private int visit;
+
+        Tup(String cur, int visit) {
+            this.cur = cur;
+            this.visit = visit;
+        }
     }
 }

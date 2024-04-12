@@ -33,7 +33,7 @@ public class Q2012 {
             //中间数如果小于右边最小，说明这个数右半边都满足条件
             if (nums[i] < min) {
                 min = nums[i];
-            //不满足需要重置为false，防止只满足左边的情况
+                //不满足需要重置为false，防止只满足左边的情况
             } else {
                 sat[i] = false;
             }

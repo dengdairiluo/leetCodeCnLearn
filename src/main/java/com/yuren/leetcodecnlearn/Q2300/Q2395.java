@@ -1,5 +1,8 @@
 package com.yuren.leetcodecnlearn.Q2300;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created with Intellij IDEA.
  * Description:
@@ -21,5 +24,15 @@ public class Q2395 {
             subarrays += count;
         }
         return subarrays;
+    }
+
+    public boolean findSubarrays(int[] nums) {
+        Set<Integer> vis = new HashSet<>();
+        for (int i = 1; i < nums.length; ++i) {
+            if (!vis.add(nums[i - 1] + nums[i])) {
+                return true;
+            }
+        }
+        return false;
     }
 }

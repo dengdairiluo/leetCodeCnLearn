@@ -7,7 +7,7 @@ package com.yuren.leetcodecnlearn.Q2400;
  * @author lujiang
  * @date 2024-06-06 上午12:00
  */
-public class Q2557 {
+public class Q2457 {
     public static long makeIntegerBeautiful(long n, int target) {
         if (judge(n, target))
             return 0;

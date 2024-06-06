@@ -11,7 +11,7 @@ import java.util.List;
  * @author lujiang
  * @date 2024-06-05 下午11:58
  */
-public class Q2556 {
+public class Q2456 {
     //字典序最小的 id,ids里面不是排序的，不能直接遍历取 要遍历再判断。
     public List<List<String>> mostPopularCreator(String[] creators, String[] ids, int[] views) {
         int n = creators.length;

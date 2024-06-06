@@ -7,7 +7,7 @@ package com.yuren.leetcodecnlearn.Q2400;
  * @author lujiang
  * @date 2024-06-06 下午11:06
  */
-public class Q2560 {
+public class Q2460 {
     public int[] applyOperations(int[] nums) {
         int length = nums.length;
         for (int i = 0; i < length - 1; i++) {

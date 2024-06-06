@@ -7,7 +7,7 @@ package com.yuren.leetcodecnlearn.Q2400;
  * @author lujiang
  * @date 2024-06-05 下午11:50
  */
-public class Q2555 {
+public class Q2455 {
     public int averageValue(int[] nums) {
         int sum = 0, cnt = 0;
         for (int x : nums) {

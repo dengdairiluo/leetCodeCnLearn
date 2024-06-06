@@ -7,7 +7,7 @@ package com.yuren.leetcodecnlearn.Q2400;
  * @author lujiang
  * @date 2024-06-05 下午11:49
  */
-public class Q2554 {
+public class Q2454 {
     public int[] secondGreaterElement(int[] nums) {
 
         int n = nums.length;

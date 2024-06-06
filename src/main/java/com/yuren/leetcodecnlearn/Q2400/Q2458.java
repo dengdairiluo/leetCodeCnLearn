@@ -9,7 +9,7 @@ import com.yuren.leetcodecnlearn.entity.TreeNode;
  * @author lujiang
  * @date 2024-06-06 下午11:07
  */
-public class Q2558 {
+public class Q2458 {
     public static int MAXK = 100100;
     public static int[] maxl = new int[MAXK];
     public static int[] maxr = new int[MAXK];

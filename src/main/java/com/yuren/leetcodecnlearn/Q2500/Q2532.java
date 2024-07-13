@@ -11,7 +11,7 @@ import java.util.PriorityQueue;
  * @author lujiang
  * @date 2024-07-13 下午11:21
  */
-public class Q2352 {
+public class Q2532 {
     public int findCrossingTime(int n, int k, int[][] time) {
         Arrays.sort(time, (a, b) -> a[0] + a[2] - b[0] - b[2]); // 稳定排序
 

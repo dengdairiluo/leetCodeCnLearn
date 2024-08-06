@@ -10,7 +10,7 @@ import java.util.Set;
  * @author lujiang
  * @date 2024-08-05 上午7:27
  */
-public class Q2481 {
+public class Q2581 {
     private int[] edge, next, head;
     int index;
     int[] parents; //parents[i] => parent of vertex i if tree was rooted at vertex 0.

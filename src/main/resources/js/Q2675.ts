@@ -2,6 +2,7 @@ type Item = (string | number | boolean | null)[]
 
 function jsonToMatrix(arr: any[]): Item[] {
     const result: Item[] = []
+    // @ts-ignore
     const set = new Set<string>()
 
     function resolveHead(o: object, prefix: string) {
@@ -14,7 +15,9 @@ function jsonToMatrix(arr: any[]): Item[] {
     }
 
     arr.forEach((o) => resolveHead(o, ""))
+    // @ts-ignore
     const titles = Array.from(set).sort()
+    // @ts-ignore
     const map = new Map<string,number>();
     result.push(titles)
     titles.forEach((v, i) => map.set(v, i))
@@ -29,6 +32,7 @@ function jsonToMatrix(arr: any[]): Item[] {
     }
 
     arr.forEach((o) => {
+        // @ts-ignore
         const row: Item = new Array(map.size).fill("")
         resolveRow(o, "", row)
         result.push(row)
